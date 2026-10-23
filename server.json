@@ -1,0 +1,21 @@
+{
+  "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
+  "name": "io.github.lucianumm/pjecalc-mcp",
+  "title": "PJe-Calc MCP",
+  "description": "Monta, liquida, confere e atualiza cálculos trabalhistas no PJe-Calc Cidadão (Windows).",
+  "repository": {
+    "url": "https://github.com/lucianumm/PJeCalcMCP",
+    "source": "github"
+  },
+  "version": "2.16.0-mcp.17",
+  "packages": [
+    {
+      "registryType": "mcpb",
+      "identifier": "https://github.com/lucianumm/PJeCalcMCP/releases/download/v2.16.0-mcp.17/pjecalc-mcp-2.16.0-mcp.17.mcpb",
+      "fileSha256": "1c91fd6cd29ec5fac1c816e2064052585b77f33b8a1250a94b71c62dd0599900",
+      "transport": {
+        "type": "stdio"
+      }
+    }
+  ]
+}

@@ -1,0 +1,1577 @@
+{
+ "origem": "Objetos exportados pelo PJe-Calc 2.16.0 (cálculos de referência montados na interface)",
+ "objetos": {
+  "HistoricoSalarialDaVerba": {
+   "$classe": "HistoricoSalarialDaVerba",
+   "campos": [
+    [
+     "id",
+     "2"
+    ],
+    [
+     "tipoVinculoHistorico",
+     "BASE"
+    ],
+    [
+     "aplicarProporcionalidade",
+     "false"
+    ],
+    [
+     "verbaDeCalculo",
+     {
+      "$ref": "Calculada",
+      "id": "6"
+     }
+    ],
+    [
+     "historicoSalarial",
+     {
+      "$ref": "HistoricoSalarial",
+      "id": "2"
+     }
+    ]
+   ]
+  },
+  "ItemBaseVerba": {
+   "$classe": "ItemBaseVerba",
+   "campos": [
+    [
+     "id",
+     "4"
+    ],
+    [
+     "integralizar",
+     "SIM"
+    ],
+    [
+     "verbaDeCalculo",
+     {
+      "$ref": "Calculada",
+      "id": "3"
+     }
+    ],
+    [
+     "formula",
+     {
+      "$ref": "FormulaReflexo",
+      "id": "10"
+     }
+    ]
+   ]
+  },
+  "HistoricoSalarial": {
+   "$classe": "HistoricoSalarial",
+   "campos": [
+    [
+     "id",
+     "2"
+    ],
+    [
+     "versao",
+     "0"
+    ],
+    [
+     "nome",
+     "SALÁRIO BASE"
+    ],
+    [
+     "tipoVariacaoParcela",
+     "FIXA"
+    ],
+    [
+     "incidenciaFGTS",
+     "true"
+    ],
+    [
+     "aplicarProporcionalidadeFGTS",
+     "false"
+    ],
+    [
+     "incidenciaINSS",
+     "true"
+    ],
+    [
+     "aplicarProporcionalidadeINSS",
+     "false"
+    ],
+    [
+     "calculo",
+     {
+      "$ref": "Calculo",
+      "id": "1"
+     }
+    ],
+    [
+     "ocorrencias",
+     {
+      "$colecao": "List",
+      "itens": []
+     }
+    ]
+   ]
+  },
+  "OcorrenciaDoHistoricoSalarial": {
+   "$classe": "OcorrenciaDoHistoricoSalarial",
+   "campos": [
+    [
+     "id",
+     "27"
+    ],
+    [
+     "versao",
+     "0"
+    ],
+    [
+     "dataOcorrencia",
+     "1362106800000"
+    ],
+    [
+     "valor",
+     "1500.00"
+    ],
+    [
+     "recolhidoFGTS",
+     "false"
+    ],
+    [
+     "recolhidoINSS",
+     "false"
+    ],
+    [
+     "incidenciaFGTS",
+     "true"
+    ],
+    [
+     "incidenciaINSS",
+     "true"
+    ],
+    [
+     "historicoSalarial",
+     {
+      "$ref": "HistoricoSalarial",
+      "id": "2"
+     }
+    ]
+   ]
+  },
+  "Ferias": {
+   "$classe": "Ferias",
+   "campos": [
+    [
+     "id",
+     "1"
+    ],
+    [
+     "versao",
+     "0"
+    ],
+    [
+     "relativa",
+     "2013/2014"
+    ],
+    [
+     "dataInicialDoPeriodoAquisitivo",
+     "1362106800000"
+    ],
+    [
+     "dataFinalDoPeriodoAquisitivo",
+     "1393556400000"
+    ],
+    [
+     "dataInicialDoPeriodoConcessivo",
+     "1393642800000"
+    ],
+    [
+     "dataFinalDoPeriodoConcessivo",
+     "1425092400000"
+    ],
+    [
+     "prazo",
+     "30"
+    ],
+    [
+     "situacao",
+     "GOZADAS"
+    ],
+    [
+     "dobraGeral",
+     "false"
+    ],
+    [
+     "abono",
+     "false"
+    ],
+    [
+     "quantidadeDiasAbono",
+     "10"
+    ],
+    [
+     "dataInicialDoPeriodoDeGozo1",
+     "1422586800000"
+    ],
+    [
+     "dataFinalDoPeriodoDeGozo1",
+     "1425092400000"
+    ],
+    [
+     "dobraDoPeriodoDeGozo1",
+     "false"
+    ],
+    [
+     "dataInicialDoPeriodoDeGozo2",
+     null
+    ],
+    [
+     "dataFinalDoPeriodoDeGozo2",
+     null
+    ],
+    [
+     "dobraDoPeriodoDeGozo2",
+     "false"
+    ],
+    [
+     "dataInicialDoPeriodoDeGozo3",
+     null
+    ],
+    [
+     "dataFinalDoPeriodoDeGozo3",
+     null
+    ],
+    [
+     "dobraDoPeriodoDeGozo3",
+     "false"
+    ],
+    [
+     "calculo",
+     {
+      "$ref": "Calculo",
+      "id": "1"
+     }
+    ]
+   ]
+  },
+  "Falta": {
+   "$classe": "Falta",
+   "campos": [
+    [
+     "id",
+     "1"
+    ],
+    [
+     "versao",
+     "0"
+    ],
+    [
+     "dataInicioPeriodoFalta",
+     "1394420400000"
+    ],
+    [
+     "dataTerminoPeriodoFalta",
+     "1394593200000"
+    ],
+    [
+     "faltaJustificada",
+     "false"
+    ],
+    [
+     "justificativaDaFalta",
+     ""
+    ],
+    [
+     "reiniciarFerias",
+     "false"
+    ],
+    [
+     "calculo",
+     {
+      "$ref": "Calculo",
+      "id": "1"
+     }
+    ]
+   ]
+  },
+  "CombinacaoDeJuros": {
+   "$classe": "CombinacaoDeJuros",
+   "campos": [
+    [
+     "id",
+     "1"
+    ],
+    [
+     "versao",
+     "0"
+    ],
+    [
+     "outroJuros",
+     "SEM_JUROS"
+    ],
+    [
+     "apartirDeOutroJuros",
+     "1433905200000"
+    ],
+    [
+     "parametrosDeAtualizacao",
+     {
+      "$ref": "ParametrosDeAtualizacao",
+      "id": "1"
+     }
+    ]
+   ]
+  },
+  "Honorario": {
+   "$classe": "Honorario",
+   "campos": [
+    [
+     "id",
+     "1"
+    ],
+    [
+     "versao",
+     "0"
+    ],
+    [
+     "descricao",
+     "HONORÁRIOS ADVOCATÍCIOS SUCUMBENCIAIS"
+    ],
+    [
+     "tipoHonorario",
+     "SUCUMBENCIAIS"
+    ],
+    [
+     "tipoDeDevedor",
+     "RECLAMADO"
+    ],
+    [
+     "nomeCredor",
+     "ADVOGADO DE TESTE"
+    ],
+    [
+     "tipoDocumentoFiscalCredor",
+     "CPF"
+    ],
+    [
+     "numeroDocumentoFiscalCredor",
+     "52998224725"
+    ],
+    [
+     "apurarIRRF",
+     "false"
+    ],
+    [
+     "tipoImpostoRenda",
+     null
+    ],
+    [
+     "tipoValor",
+     "CALCULADO"
+    ],
+    [
+     "valor",
+     null
+    ],
+    [
+     "valorJurosCalcExterno",
+     null
+    ],
+    [
+     "dataVencimento",
+     null
+    ],
+    [
+     "tipoDeIndiceDeCorrecao",
+     "UTILIZAR_INDICE_TRABALHISTA"
+    ],
+    [
+     "outroIndiceDeCorrecao",
+     null
+    ],
+    [
+     "aplicarJuros",
+     "false"
+    ],
+    [
+     "dataApartirDeAplicarJuros",
+     null
+    ],
+    [
+     "aliquota",
+     "15.00"
+    ],
+    [
+     "baseParaApuracao",
+     "BRUTO"
+    ],
+    [
+     "baseHonorario",
+     null
+    ],
+    [
+     "indiceCorrecaoHonorario",
+     null
+    ],
+    [
+     "taxaJurosHonorario",
+     null
+    ],
+    [
+     "valorInicialFaixaIrpf",
+     null
+    ],
+    [
+     "valorFinalFaixaIrpf",
+     null
+    ],
+    [
+     "valorAliquotaIrpf",
+     null
+    ],
+    [
+     "valorDeducaoIrpf",
+     null
+    ],
+    [
+     "valorDescontoSimplificadoIrpf",
+     null
+    ],
+    [
+     "valorTetoFaixaIsencaoIrpf",
+     null
+    ],
+    [
+     "valorTetoFaixaReducaoIrpf",
+     null
+    ],
+    [
+     "valorParcelaFaixaReducaoIrpf",
+     null
+    ],
+    [
+     "valorImpostoRenda",
+     null
+    ],
+    [
+     "apurarIRPFSobreJuros",
+     "false"
+    ],
+    [
+     "tipoCobrancaReclamante",
+     "DESCONTAR_CREDITO"
+    ],
+    [
+     "origemRegistro",
+     "CALCULO"
+    ],
+    [
+     "dataEvento",
+     null
+    ],
+    [
+     "folhaDoEvento",
+     null
+    ],
+    [
+     "calculo",
+     {
+      "$ref": "Calculo",
+      "id": "1"
+     }
+    ],
+    [
+     "verbasSelecionadas",
+     {
+      "$colecao": "List",
+      "itens": []
+     }
+    ]
+   ]
+  },
+  "ItemPontoFacultativo": {
+   "$classe": "ItemPontoFacultativo",
+   "campos": [
+    [
+     "id",
+     "1"
+    ],
+    [
+     "pontoFacultativo",
+     {
+      "$ext": "Feriado",
+      "id": "40675cd3-c285-477a-821f-8337feaf04a7"
+     }
+    ],
+    [
+     "calculo",
+     {
+      "$ref": "Calculo",
+      "id": "1"
+     }
+    ]
+   ]
+  },
+  "Advogado": {
+   "$classe": "Advogado",
+   "campos": [
+    [
+     "id",
+     "2"
+    ],
+    [
+     "nome",
+     "ADVOGADA DA RECLAMANTE"
+    ],
+    [
+     "tipoDocumento",
+     "CPF"
+    ],
+    [
+     "numeroDocumento",
+     "52998224725"
+    ],
+    [
+     "numeroOAB",
+     "PA12345"
+    ],
+    [
+     "tipo",
+     "RECLAMANTE"
+    ],
+    [
+     "processo",
+     {
+      "$ref": "Processo",
+      "id": "4"
+     }
+    ]
+   ]
+  },
+  "ExcecaoDaCargaHorariaDoCalculo": {
+   "$classe": "ExcecaoDaCargaHorariaDoCalculo",
+   "campos": [
+    [
+     "id",
+     "1"
+    ],
+    [
+     "versao",
+     "0"
+    ],
+    [
+     "dataInicioExcecao",
+     "1388545200000"
+    ],
+    [
+     "dataTerminoExcecao",
+     "1404097200000"
+    ],
+    [
+     "valorCargaHoraria",
+     "180.0000"
+    ],
+    [
+     "calculo",
+     {
+      "$ref": "Calculo",
+      "id": "4"
+     }
+    ]
+   ]
+  },
+  "ExcecaoDoSabadoDoCalculo": {
+   "$classe": "ExcecaoDoSabadoDoCalculo",
+   "campos": [
+    [
+     "id",
+     "1"
+    ],
+    [
+     "versao",
+     "0"
+    ],
+    [
+     "dataInicioExcecaoSabado",
+     "1404183600000"
+    ],
+    [
+     "dataTerminoExcecaoSabado",
+     "1419994800000"
+    ],
+    [
+     "calculo",
+     {
+      "$ref": "Calculo",
+      "id": "4"
+     }
+    ]
+   ]
+  },
+  "CombinacaoDeIndice": {
+   "$classe": "CombinacaoDeIndice",
+   "campos": [
+    [
+     "id",
+     "2"
+    ],
+    [
+     "versao",
+     "0"
+    ],
+    [
+     "outroIndiceTrabalhista",
+     "SELIC"
+    ],
+    [
+     "apartirDeOutroIndice",
+     "1433905200000"
+    ],
+    [
+     "parametrosDeAtualizacao",
+     {
+      "$ref": "ParametrosDeAtualizacao",
+      "id": "4"
+     }
+    ]
+   ]
+  },
+  "Multa": {
+   "$classe": "Multa",
+   "campos": [
+    [
+     "id",
+     "1"
+    ],
+    [
+     "versao",
+     "0"
+    ],
+    [
+     "descricao",
+     "MULTA POR LITIGANCIA DE MA-FE"
+    ],
+    [
+     "tipoCredorDevedor",
+     "RECLAMANTE_RECLAMADO"
+    ],
+    [
+     "nomeTerceiro",
+     null
+    ],
+    [
+     "tipoValorDaMulta",
+     "CALCULADO"
+    ],
+    [
+     "valorMulta",
+     null
+    ],
+    [
+     "valorJurosCalcExterno",
+     null
+    ],
+    [
+     "dataVencimentoMulta",
+     null
+    ],
+    [
+     "opcaoIndiceDeCorrecaoDaMulta",
+     "UTILIZAR_INDICE_TRABALHISTA"
+    ],
+    [
+     "outroIndiceDeCorrecaoDaMulta",
+     null
+    ],
+    [
+     "aplicarJurosSobreMulta",
+     "false"
+    ],
+    [
+     "dataApartirDeAplicarJuros",
+     null
+    ],
+    [
+     "aliquotaMulta",
+     "5.00"
+    ],
+    [
+     "tipoBaseMulta",
+     "PRINCIPAL"
+    ],
+    [
+     "baseMulta",
+     null
+    ],
+    [
+     "indiceCorrecaoMulta",
+     null
+    ],
+    [
+     "taxaJurosMulta",
+     null
+    ],
+    [
+     "origemRegistro",
+     "CALCULO"
+    ],
+    [
+     "tipoCobrancaReclamante",
+     "DESCONTAR_CREDITO"
+    ],
+    [
+     "dataEvento",
+     null
+    ],
+    [
+     "folhaDoEvento",
+     null
+    ],
+    [
+     "calculo",
+     {
+      "$ref": "Calculo",
+      "id": "4"
+     }
+    ]
+   ]
+  },
+  "CartaoDePontoDaVerba": {
+   "$classe": "CartaoDePontoDaVerba",
+   "campos": [
+    [
+     "id",
+     "1"
+    ],
+    [
+     "tipoVinculoCartao",
+     "QUANTIDADE"
+    ],
+    [
+     "verbaDeCalculo",
+     {
+      "$ref": "Calculada",
+      "id": "217"
+     }
+    ],
+    [
+     "cartaoDePonto",
+     {
+      "$ref": "CartaoDePonto",
+      "id": "1"
+     }
+    ]
+   ]
+  },
+  "OperacaoDeFgts": {
+   "$classe": "OperacaoDeFgts",
+   "campos": [
+    [
+     "id",
+     "1"
+    ],
+    [
+     "versao",
+     "0"
+    ],
+    [
+     "competencia",
+     "1427770800000"
+    ],
+    [
+     "tipoDeOperacaoDoFgts",
+     "DEPOSITO"
+    ],
+    [
+     "valor",
+     "500.00"
+    ],
+    [
+     "indiceAcumulado",
+     null
+    ],
+    [
+     "indiceAcumuladoDaMulta",
+     null
+    ],
+    [
+     "taxaDeJuros",
+     null
+    ],
+    [
+     "fgts",
+     {
+      "$ref": "Fgts",
+      "id": "5"
+     }
+    ]
+   ]
+  },
+  "CartaoDePonto": {
+   "$classe": "CartaoDePonto",
+   "campos": [
+    [
+     "id",
+     "1"
+    ],
+    [
+     "nome",
+     "QT. H. EXT"
+    ],
+    [
+     "versao",
+     "0"
+    ],
+    [
+     "calculo",
+     {
+      "$ref": "Calculo",
+      "id": "5"
+     }
+    ],
+    [
+     "ocorrencias",
+     {
+      "$colecao": "List",
+      "itens": []
+     }
+    ]
+   ]
+  },
+  "OcorrenciaDoCartaoDePonto": {
+   "$classe": "OcorrenciaDoCartaoDePonto",
+   "campos": [
+    [
+     "id",
+     "1"
+    ],
+    [
+     "dataOcorrencia",
+     "1362106800000"
+    ],
+    [
+     "valor",
+     "10.0000"
+    ],
+    [
+     "versao",
+     "0"
+    ],
+    [
+     "cartaoDePonto",
+     {
+      "$ref": "CartaoDePonto",
+      "id": "1"
+     }
+    ]
+   ]
+  },
+  "AliquotaDePrevidenciaPrivada": {
+   "$classe": "AliquotaDePrevidenciaPrivada",
+   "campos": [
+    [
+     "id",
+     "1"
+    ],
+    [
+     "versao",
+     "0"
+    ],
+    [
+     "dataInicioPeriodo",
+     "1362106800000"
+    ],
+    [
+     "dataTerminoPeriodo",
+     "1427857200000"
+    ],
+    [
+     "aliquota",
+     "5.00"
+    ],
+    [
+     "previdenciaPrivada",
+     {
+      "$ref": "PrevidenciaPrivada",
+      "id": "5"
+     }
+    ]
+   ]
+  },
+  "ItemHistoricoSalarialDeSeguroDesemprego": {
+   "$classe": "ItemHistoricoSalarialDeSeguroDesemprego",
+   "campos": [
+    [
+     "id",
+     "1"
+    ],
+    [
+     "historicoSalarial",
+     {
+      "$ref": "HistoricoSalarial",
+      "id": "8"
+     }
+    ],
+    [
+     "seguroDesemprego",
+     {
+      "$ref": "SeguroDesemprego",
+      "id": "5"
+     }
+    ]
+   ]
+  },
+  "ItemHistoricoSalarial": {
+   "$classe": "ItemHistoricoSalarial",
+   "campos": [
+    [
+     "id",
+     "1"
+    ],
+    [
+     "historicoSalarial",
+     {
+      "$ref": "HistoricoSalarial",
+      "id": "8"
+     }
+    ],
+    [
+     "salarioFamilia",
+     {
+      "$ref": "SalarioFamilia",
+      "id": "5"
+     }
+    ]
+   ]
+  },
+  "AliquotasDoEmpregadorPorPeriodo": {
+   "$classe": "AliquotasDoEmpregadorPorPeriodo",
+   "campos": [
+    [
+     "id",
+     "1"
+    ],
+    [
+     "versao",
+     "0"
+    ],
+    [
+     "dataInicioPeriodo",
+     "1362106800000"
+    ],
+    [
+     "dataTerminoPeriodo",
+     "1385866800000"
+    ],
+    [
+     "aliquotaEmpresa",
+     "20.00"
+    ],
+    [
+     "aliquotaRAT",
+     "3.00"
+    ],
+    [
+     "aliquotaTerceiros",
+     "5.80"
+    ],
+    [
+     "inss",
+     {
+      "$ref": "Inss",
+      "id": "6"
+     }
+    ]
+   ]
+  },
+  "PeriodoDoINSSComOpcaoSimples": {
+   "$classe": "PeriodoDoINSSComOpcaoSimples",
+   "campos": [
+    [
+     "id",
+     "1"
+    ],
+    [
+     "versao",
+     "0"
+    ],
+    [
+     "dataInicioSimples",
+     "1388545200000"
+    ],
+    [
+     "dataTerminoSimples",
+     "1417402800000"
+    ],
+    [
+     "inss",
+     {
+      "$ref": "Inss",
+      "id": "6"
+     }
+    ]
+   ]
+  },
+  "ApuracaoCartaoDePonto": {
+   "$classe": "ApuracaoCartaoDePonto",
+   "campos": [
+    [
+     "id",
+     "1"
+    ],
+    [
+     "versao",
+     "0"
+    ],
+    [
+     "dataInicial",
+     "1362106800000"
+    ],
+    [
+     "dataFinal",
+     "1369969200000"
+    ],
+    [
+     "qtExpedientes",
+     null
+    ],
+    [
+     "formaDeApuracaoCartao",
+     "HORAS_EXTRAS_EXCEDENTES_DA_JORNADA_DIARIA"
+    ],
+    [
+     "qtHorasExtasSumulaTST",
+     "02:00"
+    ],
+    [
+     "qtPrimeirasHorasExtrasSeparado",
+     "02:00"
+    ],
+    [
+     "extraDescansoSeparado",
+     "false"
+    ],
+    [
+     "extraFeriadoSeparado",
+     "false"
+    ],
+    [
+     "extraSabadoDomingoSeparado",
+     "false"
+    ],
+    [
+     "considerarFeriados",
+     "true"
+    ],
+    [
+     "tolerancia",
+     "false"
+    ],
+    [
+     "toleranciaPorTurno",
+     "00:05"
+    ],
+    [
+     "toleranciaPorDia",
+     "00:10"
+    ],
+    [
+     "valorJornadaDiariaSegundaFeira",
+     "08:00"
+    ],
+    [
+     "valorJornadaDiariaTercaFeira",
+     "08:00"
+    ],
+    [
+     "valorJornadaDiariaQuartaFeira",
+     "08:00"
+    ],
+    [
+     "valorJornadaDiariaQuintaFeira",
+     "08:00"
+    ],
+    [
+     "valorJornadaDiariaSextaFeira",
+     "08:00"
+    ],
+    [
+     "valorJornadaDiariaSab",
+     "04:00"
+    ],
+    [
+     "valorJornadaDiariaDom",
+     "00:00"
+    ],
+    [
+     "qtJornadaSemanal",
+     "44.0000"
+    ],
+    [
+     "qtJornadaMensal",
+     "188.5700"
+    ],
+    [
+     "considerarJornadaDiariaFeriadoTrabalhado",
+     "false"
+    ],
+    [
+     "considerarJornadaDiariaFeriadoNaoTrabalhado",
+     "false"
+    ],
+    [
+     "intervaloIntraJornadaSupQuatroSeis",
+     "false"
+    ],
+    [
+     "valorIntervaloIntraJornadaSupQuatroSeis",
+     "00:15"
+    ],
+    [
+     "intervalorIntraJornadaSupSeis",
+     "false"
+    ],
+    [
+     "valorIntervalorIntraJornadaSupSeis",
+     "01:00"
+    ],
+    [
+     "toleranciaIntervaloIntraJornadaSupSeis",
+     "00:05"
+    ],
+    [
+     "apurarSupressaoIntervaloIntraIntegral",
+     "false"
+    ],
+    [
+     "apurarSupressaoIntervaloIntraReforma",
+     "false"
+    ],
+    [
+     "considerarFracionamentoIntervaloIntra",
+     "false"
+    ],
+    [
+     "apurarExcessoIntervaloIntra",
+     "false"
+    ],
+    [
+     "intervaloIntrajornadaMaximo",
+     "02:00"
+    ],
+    [
+     "apurarApenasExcessoAcimaJornada",
+     "false"
+    ],
+    [
+     "apurarSupressaoIntervaloArt253",
+     "false"
+    ],
+    [
+     "valorTrabalhoArt253",
+     "01:40"
+    ],
+    [
+     "valorDescansoArt253",
+     "00:20"
+    ],
+    [
+     "apurarSupressaoIntervalo384",
+     "false"
+    ],
+    [
+     "apurarSupressaoIntervalo72",
+     "false"
+    ],
+    [
+     "descansoEntreJornadas",
+     "false"
+    ],
+    [
+     "valorDescansoEntreJornadas",
+     "11:00"
+    ],
+    [
+     "valorDescansoEntreSemanas",
+     "35:00"
+    ],
+    [
+     "apurarFeriadosTrabalhados",
+     "false"
+    ],
+    [
+     "apurarSabadosDomingosTrabalhados",
+     "false"
+    ],
+    [
+     "apurarDomingosTrabalhados",
+     "false"
+    ],
+    [
+     "horarioNoturnoApuracaroCartao",
+     "ATIVIDADE_URBANA"
+    ],
+    [
+     "horarioProrrogadoSumula60",
+     "false"
+    ],
+    [
+     "forcarProrrogacao",
+     "false"
+    ],
+    [
+     "considerarReducaoFictaDaHoraNoturna",
+     "true"
+    ],
+    [
+     "apurarHorasExtrasNoturnas",
+     "false"
+    ],
+    [
+     "apurarHorasNoturnas",
+     "false"
+    ],
+    [
+     "preenchimentoJornadasCartao",
+     "PROGRAMACAO"
+    ],
+    [
+     "qtdExpedientesEscala",
+     null
+    ],
+    [
+     "qtdExpedientesSemanal",
+     null
+    ],
+    [
+     "qtdDiasTrabalhados",
+     null
+    ],
+    [
+     "tipoEscalaPreenchimentoJornadaCartaoEnum",
+     "OUTRA"
+    ],
+    [
+     "valorHoraInicioEscala",
+     null
+    ],
+    [
+     "calculo",
+     {
+      "$ref": "Calculo",
+      "id": "6"
+     }
+    ],
+    [
+     "preenchimentoJornadaSemanalApuracaoCartao",
+     {
+      "$colecao": "List",
+      "itens": []
+     }
+    ],
+    [
+     "preenchimentoJornadaEscalaApuracaoCartao",
+     {
+      "$colecao": "List",
+      "itens": []
+     }
+    ],
+    [
+     "ocorrenciasJornadaApuracaoCartao",
+     {
+      "$colecao": "List",
+      "itens": []
+     }
+    ]
+   ]
+  },
+  "PreenchimentoJornadaApuracaoCartao": {
+   "$classe": "PreenchimentoJornadaApuracaoCartao",
+   "campos": [
+    [
+     "id",
+     "1"
+    ],
+    [
+     "versao",
+     "0"
+    ],
+    [
+     "sequencial",
+     "2"
+    ],
+    [
+     "tipoPreenchimentoJornadaCartao",
+     "SEMANAL"
+    ],
+    [
+     "hrEntrada1",
+     "08:00"
+    ],
+    [
+     "hrSaida1",
+     "12:00"
+    ],
+    [
+     "hrEntrada2",
+     "13:00"
+    ],
+    [
+     "hrSaida2",
+     "18:00"
+    ],
+    [
+     "hrEntrada3",
+     null
+    ],
+    [
+     "hrSaida3",
+     null
+    ],
+    [
+     "hrEntrada4",
+     null
+    ],
+    [
+     "hrSaida4",
+     null
+    ],
+    [
+     "hrEntrada5",
+     null
+    ],
+    [
+     "hrSaida5",
+     null
+    ],
+    [
+     "hrEntrada6",
+     null
+    ],
+    [
+     "hrSaida6",
+     null
+    ],
+    [
+     "editavel",
+     "true"
+    ],
+    [
+     "apuracaoCartaoDePonto",
+     {
+      "$ref": "ApuracaoCartaoDePonto",
+      "id": "1"
+     }
+    ]
+   ]
+  },
+  "OcorrenciaJornadaApuracaoCartao": {
+   "$classe": "OcorrenciaJornadaApuracaoCartao",
+   "campos": [
+    [
+     "id",
+     "1"
+    ],
+    [
+     "versao",
+     "0"
+    ],
+    [
+     "dataOcorrencia",
+     "1362106800000"
+    ],
+    [
+     "hrEntrada1",
+     "08:00"
+    ],
+    [
+     "hrSaida1",
+     "12:00"
+    ],
+    [
+     "hrEntrada2",
+     "13:00"
+    ],
+    [
+     "hrSaida2",
+     "18:00"
+    ],
+    [
+     "hrEntrada3",
+     null
+    ],
+    [
+     "hrSaida3",
+     null
+    ],
+    [
+     "hrEntrada4",
+     null
+    ],
+    [
+     "hrSaida4",
+     null
+    ],
+    [
+     "hrEntrada5",
+     null
+    ],
+    [
+     "hrSaida5",
+     null
+    ],
+    [
+     "hrEntrada6",
+     null
+    ],
+    [
+     "hrSaida6",
+     null
+    ],
+    [
+     "alteradaManualmente",
+     "false"
+    ],
+    [
+     "apuracaoCartaoDePonto",
+     {
+      "$ref": "ApuracaoCartaoDePonto",
+      "id": "1"
+     }
+    ]
+   ]
+  },
+  "AutoJudicial": {
+   "$classe": "AutoJudicial",
+   "campos": [
+    [
+     "id",
+     "1"
+    ],
+    [
+     "versao",
+     "0"
+    ],
+    [
+     "tipoDeAuto",
+     "ARREMATACAO"
+    ],
+    [
+     "valorAvaliacaoAuto",
+     "20000.00"
+    ],
+    [
+     "dataVencimentoAuto",
+     "1462849200000"
+    ],
+    [
+     "valorTeto",
+     null
+    ],
+    [
+     "valorCustasAuto",
+     null
+    ],
+    [
+     "indiceCorrecao",
+     null
+    ],
+    [
+     "taxaJuros",
+     null
+    ],
+    [
+     "origemRegistro",
+     "CALCULO"
+    ],
+    [
+     "custasJudiciais",
+     {
+      "$ref": "CustasJudiciais",
+      "id": "1"
+     }
+    ]
+   ]
+  },
+  "Armazenamento": {
+   "$classe": "Armazenamento",
+   "campos": [
+    [
+     "id",
+     "1"
+    ],
+    [
+     "versao",
+     "0"
+    ],
+    [
+     "dataInicioArmazenamento",
+     "1452481200000"
+    ],
+    [
+     "dataTerminoArmazenamento",
+     "1457578800000"
+    ],
+    [
+     "valorAvaliacaoArmazenamento",
+     "5000.00"
+    ],
+    [
+     "qtdeDias",
+     "0"
+    ],
+    [
+     "valorCustasArmazenamento",
+     null
+    ],
+    [
+     "indiceCorrecao",
+     null
+    ],
+    [
+     "taxaJuros",
+     null
+    ],
+    [
+     "origemRegistro",
+     "CALCULO"
+    ],
+    [
+     "custasJudiciais",
+     {
+      "$ref": "CustasJudiciais",
+      "id": "1"
+     }
+    ]
+   ]
+  },
+  "ExcecaoDoFechamentoDeCartaoDePonto": {
+   "$classe": "ExcecaoDoFechamentoDeCartaoDePonto",
+   "campos": [
+    [
+     "id",
+     "1"
+    ],
+    [
+     "versao",
+     "0"
+    ],
+    [
+     "dataInicioExcecao",
+     "1388545200000"
+    ],
+    [
+     "dataTerminoExcecao",
+     "1401591600000"
+    ],
+    [
+     "diaFechamentoMes",
+     "25"
+    ],
+    [
+     "calculo",
+     {
+      "$ref": "Calculo",
+      "id": "4"
+     }
+    ]
+   ]
+  }
+ }
+}

@@ -1,0 +1,17 @@
+{
+  "schema_version": "4.0",
+  "facts": [
+    {
+      "id": "F1",
+      "pdf_page": 4,
+      "quote": "holerite de 03/2015: salário base 1.700,00; horas extras 120,50",
+      "source_sha256": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb"
+    },
+    {
+      "id": "F2",
+      "pdf_page": 4,
+      "quote": "cartão de 03/2015",
+      "source_sha256": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb"
+    }
+  ]
+}

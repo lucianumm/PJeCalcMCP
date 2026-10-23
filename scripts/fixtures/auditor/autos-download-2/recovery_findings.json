@@ -1,0 +1,48 @@
+{
+  "schema_version": "1.0",
+  "status": "partial",
+  "findings": [
+    {
+      "id": "EXT-1",
+      "code": "PAGE_RENDER_MISSING",
+      "status": "open",
+      "pdf_page": 1
+    },
+    {
+      "id": "EXT-2",
+      "code": "PAGE_RENDER_MISSING",
+      "status": "open",
+      "pdf_page": 2
+    },
+    {
+      "id": "EXT-3",
+      "code": "PAGE_RENDER_MISSING",
+      "status": "open",
+      "pdf_page": 3
+    },
+    {
+      "id": "EXT-4",
+      "code": "PAGE_RENDER_MISSING",
+      "status": "open",
+      "pdf_page": 4
+    },
+    {
+      "id": "EXT-5",
+      "code": "PAGE_RENDER_MISSING",
+      "status": "open",
+      "pdf_page": 5
+    },
+    {
+      "id": "EXT-6",
+      "code": "PAGE_RENDER_MISSING",
+      "status": "open",
+      "pdf_page": 6
+    },
+    {
+      "id": "EXT-7",
+      "code": "PAGE_RENDER_MISSING",
+      "status": "open",
+      "pdf_page": 7
+    }
+  ]
+}

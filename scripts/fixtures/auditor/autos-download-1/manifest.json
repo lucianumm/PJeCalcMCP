@@ -1,0 +1,25 @@
+{
+  "schema_version": "1.2",
+  "process_id": "0009999-11.2018.5.02.0001",
+  "source": {
+    "name": "autos-download-1.pdf",
+    "sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+    "pages": 4,
+    "size_bytes": 1000
+  },
+  "coverage": {
+    "pages_total": 4,
+    "pages_processed": 4,
+    "pages_ocr_or_vision": 0,
+    "semantic_vision_unavailable": 4,
+    "coverage_percent": 100
+  },
+  "pieces": [
+    {
+      "id": "P001",
+      "piece": "Petição Inicial",
+      "pdf_page_start": 1,
+      "pdf_page_end": 4
+    }
+  ]
+}

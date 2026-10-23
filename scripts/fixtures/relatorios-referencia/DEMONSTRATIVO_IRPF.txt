@@ -1,0 +1,53 @@
+PJe-Calc
+Sistema de Cálculos Trabalhistas
+Processo:
+0001234-45.2015.5.08.0001
+Cálculo:
+400
+PLANILHA DE CÁLCULO
+Reclamante:
+MARIA DE TESTE
+Reclamado:
+EMPRESA TESTE LTDA
+Período do Cálculo:
+Data Ajuizamento:
+10/06/2015
+Data Liquidação:
+Demonstrativo de Imposto de Renda
+Rendimentos Recebidos Acumuladamente Relativos a Anos-Calendário Anteriores ao do Recebimento - 01/03/2013 a 15/04/2015
+Nome: TRIBUTAÇÃO EXCLUSIVA
+Quant. de Meses: 28
+Verbas
+Juros
+Contrib. Social
+Previd. Privada
+Pensão Aliment.
+Honorários
+Depend.
+Aposent. > 65 anos
+Desc. Simplificado
+Base
+Faixa
+Alíquota
+Dedução
+Redução
+Devido
+13.613,17
+-
+1.165,28
+0,00
+0,00
+0,00
+-
+-
+0,00
+12.447,89
+0,00 à 53.311,44
+0,00 %
+0,00
+0,00
+0,00
+Total Devido
+0,00
+Pág. 1 de
+1

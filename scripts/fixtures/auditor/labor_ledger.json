@@ -1,0 +1,96 @@
+{
+  "schema_version": "1.0",
+  "rules": [],
+  "days": [
+    {
+      "id": "DAY-1",
+      "relationship_id": "REL-1",
+      "date": "2015-03-02",
+      "day_status": "worked",
+      "origin": "document",
+      "fact_ids": [
+        "F2"
+      ],
+      "intervals": [
+        {
+          "start": "2015-03-02T08:00:00-03:00",
+          "end": "2015-03-02T12:00:00-03:00"
+        },
+        {
+          "start": "2015-03-02T13:00:00-03:00",
+          "end": "2015-03-02T19:00:00-03:00"
+        }
+      ],
+      "reason": "cartão sintético"
+    },
+    {
+      "id": "DAY-2",
+      "relationship_id": "REL-1",
+      "date": "2015-03-03",
+      "day_status": "worked",
+      "origin": "client",
+      "fact_ids": [],
+      "intervals": [
+        {
+          "start": "2015-03-03T08:00:00-03:00",
+          "end": "2015-03-03T18:00:00-03:00"
+        }
+      ],
+      "reason": "relato sintético"
+    },
+    {
+      "id": "DAY-3",
+      "relationship_id": "REL-1",
+      "date": "2015-03-04",
+      "day_status": "rest",
+      "origin": "document",
+      "fact_ids": [
+        "F2"
+      ],
+      "intervals": [],
+      "reason": "folga sintética"
+    }
+  ],
+  "payroll": [
+    {
+      "id": "SAL-1",
+      "relationship_id": "REL-1",
+      "competence": "2015-03",
+      "rubric": "SALÁRIO BASE",
+      "kind": "salary_parameter",
+      "payment_id": null,
+      "amount": "1700.00",
+      "origin": "document",
+      "fact_ids": [
+        "F1"
+      ],
+      "reason": "holerite sintético"
+    },
+    {
+      "id": "PAG-1",
+      "relationship_id": "REL-1",
+      "competence": "2015-03",
+      "rubric": "HORAS EXTRAS 50%",
+      "kind": "payment",
+      "payment_id": "PAG-1",
+      "amount": "120.50",
+      "origin": "document",
+      "fact_ids": [
+        "F1"
+      ],
+      "reason": "holerite sintético"
+    },
+    {
+      "id": "DUE-1",
+      "relationship_id": "REL-1",
+      "competence": "2015-03",
+      "rubric": "HORAS EXTRAS 50%",
+      "kind": "due",
+      "payment_id": null,
+      "amount": "300.00",
+      "origin": "client",
+      "fact_ids": [],
+      "reason": "estimativa sintética"
+    }
+  ]
+}

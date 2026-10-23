@@ -1,0 +1,60 @@
+{
+  "_descricao": "Bloco execucao para calculo_atualizar sobre scripts/fixtures/calculo-liquidado-referencia.PJC (liquidado em 30/06/2016): dois pagamentos, recolhimento da contribuição social, honorários e multa da execução, atualização até 31/08/2016.",
+  "dataAtualizacao": "2016-08-31",
+  "identificacao": "fl. 350",
+  "cobrarEncargosIrpf": false,
+  "honorarios": [
+    {
+      "tipo": "SUCUMBENCIAIS",
+      "descricao": "Honorários da execução",
+      "devedor": "RECLAMADO",
+      "credor": {
+        "nome": "Advogada da Execucao",
+        "cpf": "529.982.247-25"
+      },
+      "valor": 500,
+      "dataVencimento": "2016-07-20",
+      "dataEvento": "2016-07-20",
+      "folha": "fl. 320"
+    }
+  ],
+  "multas": [
+    {
+      "descricao": "Multa do art. 523 do CPC",
+      "credorDevedor": "RECLAMANTE_RECLAMADO",
+      "valor": 1000,
+      "dataVencimento": "2016-07-20",
+      "dataEvento": "2016-07-20",
+      "folha": "fl. 321"
+    }
+  ],
+  "pagamentos": [
+    {
+      "data": "2016-07-15",
+      "valor": 10000,
+      "folha": "fl. 300",
+      "priorizarJuros": true,
+      "creditoReclamante": 8000,
+      "credito": {
+        "principal": "apurar"
+      },
+      "recolher": {
+        "contribuicaoSocial": "apurar"
+      },
+      "outrosDebitosReclamado": 2000,
+      "outros": {
+        "inssSalariosDevidos": "apurar"
+      }
+    },
+    {
+      "data": "2016-08-10",
+      "valor": 3000,
+      "folha": "fl. 330",
+      "priorizarJuros": true,
+      "credito": {
+        "principal": "apurar",
+        "multasReclamante": "apurar"
+      }
+    }
+  ]
+}

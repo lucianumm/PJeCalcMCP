@@ -1,0 +1,69 @@
+{
+  "manifest_version": "0.3",
+  "name": "pjecalc-mcp",
+  "display_name": "PJe-Calc MCP",
+  "version": "2.16.0-mcp.17",
+  "description": "Monta, liquida, confere e atualiza cálculos trabalhistas no PJe-Calc Cidadão 2.16 instalado no seu computador, a partir da sentença e dos documentos do processo.",
+  "long_description": "Conecta o Claude ao PJe-Calc Cidadão 2.16 instalado neste computador Windows. O assistente lê o processo, compõe o título a partir de todas as decisões, mostra um plano de interpretação para você aprovar e monta o cálculo no próprio PJe-Calc: verbas e reflexos, cartão de ponto, FGTS, contribuição social, imposto de renda, honorários, custas, correção e juros. Também atualiza o cálculo homologado na execução e confere tudo de forma independente, ao centavo. Requer o PJe-Calc Cidadão 2.16 extraído no computador. Os arquivos gerados ficam em DocumentosPJe-Calc MCP, ou na pasta que você escolher.",
+  "author": {
+    "name": "Lucianum",
+    "url": "https://github.com/lucianumm"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/lucianumm/PJeCalcMCP"
+  },
+  "homepage": "https://github.com/lucianumm/PJeCalcMCP",
+  "documentation": "https://github.com/lucianumm/PJeCalcMCP#readme",
+  "support": "https://github.com/lucianumm/PJeCalcMCP/issues",
+  "icon": "imagens/icone.png",
+  "server": {
+    "type": "node",
+    "entry_point": "server/server.mjs",
+    "mcp_config": {
+      "command": "node",
+      "args": [
+        "${__dirname}/server/server.mjs"
+      ],
+      "env": {
+        "PJECALC_HOME": "${user_config.pjecalc_home}",
+        "PJECALC_MCP_SAIDA": "${user_config.pasta_saida}"
+      }
+    }
+  },
+  "tools_generated": true,
+  "prompts_generated": true,
+  "keywords": [
+    "pje-calc",
+    "pjecalc",
+    "cálculo trabalhista",
+    "justiça do trabalho",
+    "liquidação",
+    "trabalhista",
+    "direito do trabalho",
+    "brasil"
+  ],
+  "license": "AGPL-3.0-only",
+  "compatibility": {
+    "platforms": [
+      "win32"
+    ],
+    "runtimes": {
+      "node": ">=20.0.0"
+    }
+  },
+  "user_config": {
+    "pjecalc_home": {
+      "type": "directory",
+      "title": "Pasta do PJe-Calc (opcional)",
+      "description": "Pasta onde o PJe-Calc Cidadão 2.16 foi extraído (a que contém iniciarPjeCalc.bat). Deixe em branco para o MCP encontrar sozinho.",
+      "required": false
+    },
+    "pasta_saida": {
+      "type": "directory",
+      "title": "Pasta dos cálculos gerados (opcional)",
+      "description": "Onde gravar os .PJC, relatórios e registros. Em branco: DocumentosPJe-Calc MCP.",
+      "required": false
+    }
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "name": "pjecalc-mcp-skill",
+  "version": "2.16.0-mcp.17",
+  "description": "Servidor MCP do PJe-Calc Cidadão 2.16.0: agentes de IA montam o cálculo trabalhista inteiro (processo, verbas e reflexos, cartão de ponto, FGTS, INSS, IR, honorários, custas, correção e juros), importado e pronto para liquidar.",
+  "type": "module",
+  "main": "server.mjs",
+  "bin": {
+    "pjecalc-mcp": "server.mjs"
+  },
+  "scripts": {
+    "start": "node server.mjs",
+    "test": "node ../scripts/test-mcp.mjs",
+    "test:ponta-a-ponta": "node ../scripts/test-ponta-a-ponta.mjs todos"
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "license": "AGPL-3.0-only"
+}

@@ -1,0 +1,549 @@
+PJe-Calc
+Sistema de Cálculos Trabalhistas
+Processo:
+0001234-45.2015.5.08.0001
+468
+PLANILHA DE ATUALIZAÇÃO DE CÁLCULO
+Reclamante:
+MARIA DE TESTE
+Reclamado:
+EMPRESA TESTE LTDA
+Período do Cálculo:
+01/03/2013 a 15/04/2015
+Data Ajuizamento:
+10/06/2015
+Data Liquidação:
+Resumo da Atualização do Cálculo
+Descrição do Saldo Devedor por Credor
+Valor
+LÍQUIDO DEVIDO AO RECLAMANTE
+11.649,75
+DEPÓSITO FGTS
+7.111,16
+CONTRIBUIÇÃO SOCIAL SOBRE SALÁRIOS DEVIDOS
+4.773,88
+PENSÃO ALIMENTÍCIA
+6.704,74
+HONORÁRIOS LÍQUIDOS PARA ADVOGADO DE TESTE
+4.744,64
+IRRF SOBRE HONORÁRIOS PARA ADVOGADO DE TESTE
+0,00
+IRPF DEVIDO PELO RECLAMANTE
+0,00
+CUSTAS JUDICIAIS DEVIDAS PELO RECLAMADO
+3.714,50
+Total Devido Pelo Reclamado
+38.698,67
+Eventos ocorridos: Custas de Armazenamento em 01/07/2016; Pensão Alimentícia em 20/07/2016; Custa Fixa de Agravo de Petição em 25/07/2016; Auto Judicial de Arrematação em 25/07/2016; Pagamento/Recolhimento em 10/08/2016 no valor de R$ 5.000,00.
+Atualização liquidada por offline na versão 2.16.0 em 19/10/2026 às 08:56:20.
+Pág. 1 de
+4
+Processo:
+0001234-45.2015.5.08.0001
+468
+PLANILHA DE ATUALIZAÇÃO DE CÁLCULO
+Reclamante:
+MARIA DE TESTE
+Reclamado:
+EMPRESA TESTE LTDA
+Período do Cálculo:
+Data Ajuizamento:
+10/06/2015
+Data Liquidação:
+Demonstrativo da Atualização do Cálculo
+Atualização do Cálculo (FL. 400) até 20/07/2016, data do(s) evento(s) Pensão Alimentícia (FL. 322).
+Créditos do Reclamante
+Base
+Taxa
+Valor
+Índice
+Devido
+Pago
+Diferença
+Principal Corrigido
+-
+-
+24.136,30
+1,005400000
+24.266,64
+0,00
+24.266,64
+Juros de Mora até 30/06/2016
+-
+-
+142,52
+1,005400000
+143,29
+0,00
+143,29
+Juros de Mora de 01/07/2016 até 20/07/2016
+23.101,36
+0,0000%
+-
+-
+0,00
+0,00
+0,00
+FGTS
+-
+-
+6.987,85
+1,005400000
+7.025,58
+0,00
+7.025,58
+Juros de Mora até 30/06/2016
+-
+-
+53,43
+1,005400000
+53,72
+0,00
+53,72
+Juros de Mora de 01/07/2016 até 20/07/2016
+7.025,58
+0,0000%
+-
+-
+0,00
+0,00
+0,00
+Total Parcial
+31.489,23
+0,00
+31.489,23
+Descontar dos Créditos do Reclamante
+Base
+Taxa
+Valor
+Índice
+Devido
+Pago
+Diferença
+Depósito de FGTS
+-
+-
+6.987,85
+1,005400000
+7.025,58
+0,00
+7.025,58
+Juros de Mora até 30/06/2016
+-
+-
+53,43
+1,005400000
+53,72
+0,00
+53,72
+Juros de Mora de 01/07/2016 até 20/07/2016
+7.025,58
+0,0000%
+-
+-
+0,00
+0,00
+0,00
+Desconto da Contribuição Social
+-
+-
+1.165,28
+1,000000000
+1.165,28
+0,00
+1.165,28
+Pensão Alimentícia
+27.948,10
+30,0000%
+-
+-
+8.384,43
+0,00
+8.384,43
+Imposto de Renda devido pelo Reclamante
+-
+-
+-
+-
+0,00
+0,00
+0,00
+Total Parcial
+16.629,01
+0,00
+16.629,01
+Outros Débitos do Reclamado
+Base
+Taxa
+Valor
+Índice
+Devido
+Pago
+Diferença
+Atualização liquidada por offline na versão 2.16.0 em 19/10/2026 às 08:56:20.
+Pág. 2 de
+4
+Contribuição Social sobre Salários Devidos
+-
+-
+-
+-
+3.565,97
+0,00
+3.565,97
+HONORÁRIOS ADVOCATÍCIOS SUCUMBENCIAIS devidos para ADVOGADO DE TESTE
+31.489,23
+15,0000%
+-
+-
+4.723,38
+0,00
+4.723,38
+Custas Judiciais devidas pelo Reclamado
+-
+-
+-
+-
+1.195,57
+0,00
+1.195,57
+Total Parcial
+9.484,92
+0,00
+9.484,92
+Atualização do Cálculo (FL. 400) até 10/08/2016, data do(s) evento(s) Pagamento/Recolhimento (FL. 360).
+Créditos do Reclamante
+Base
+Taxa
+Valor
+Índice
+Devido
+Pago
+Diferença
+Principal Corrigido
+-
+-
+24.266,64
+1,004500000
+24.375,84
+4.970,65
+19.405,19
+Juros de Mora até 20/07/2016
+-
+-
+143,29
+1,004500000
+143,93
+29,35
+114,58
+Juros de Mora de 21/07/2016 até 10/08/2016
+23.210,56
+0,0000%
+-
+-
+0,00
+0,00
+0,00
+FGTS
+-
+-
+7.025,58
+1,004500000
+7.057,20
+0,00
+7.057,20
+Juros de Mora até 20/07/2016
+-
+-
+53,72
+1,004500000
+53,96
+0,00
+53,96
+Juros de Mora de 21/07/2016 até 10/08/2016
+7.057,20
+0,0000%
+-
+-
+0,00
+0,00
+0,00
+Total Parcial
+31.630,93
+5.000,00
+26.630,93
+Descontar dos Créditos do Reclamante
+Base
+Taxa
+Valor
+Índice
+Devido
+Pago
+Diferença
+Depósito de FGTS
+-
+-
+7.025,58
+1,004500000
+7.057,20
+0,00
+7.057,20
+Juros de Mora até 20/07/2016
+-
+-
+53,72
+1,004500000
+53,96
+0,00
+53,96
+Juros de Mora de 21/07/2016 até 10/08/2016
+7.057,20
+0,0000%
+-
+-
+0,00
+0,00
+0,00
+Desconto da Contribuição Social
+-
+-
+1.165,28
+1,000000000
+1.165,28
+0,00
+1.165,28
+Pensão Alimentícia
+28.073,87
+30,0000%
+-
+-
+8.422,16
+1.717,42
+6.704,74
+Imposto de Renda devido pelo Reclamante
+-
+-
+-
+-
+0,00
+0,00
+0,00
+Total Parcial
+16.698,60
+1.717,42
+14.981,18
+Outros Débitos do Reclamado
+Base
+Taxa
+Valor
+Índice
+Devido
+Pago
+Diferença
+Contribuição Social sobre Salários Devidos
+-
+-
+-
+-
+3.608,60
+0,00
+3.608,60
+HONORÁRIOS ADVOCATÍCIOS SUCUMBENCIAIS devidos para ADVOGADO DE TESTE
+31.630,93
+15,0000%
+-
+-
+4.744,64
+0,00
+4.744,64
+Custas Judiciais devidas pelo Reclamado
+-
+-
+-
+-
+3.614,05
+0,00
+3.614,05
+Total Parcial
+11.967,29
+0,00
+11.967,29
+Atualização liquidada por offline na versão 2.16.0 em 19/10/2026 às 08:56:20.
+Pág. 3 de
+4
+Saldo Devedor em 31/08/2016
+Créditos do Reclamante
+Base
+Taxa
+Valor
+Índice
+Devido
+Pago
+Diferença
+Principal Corrigido
+-
+-
+19.405,19
+1,000000000
+19.405,19
+0,00
+19.405,19
+Juros de Mora até 10/08/2016
+-
+-
+114,58
+1,000000000
+114,58
+0,00
+114,58
+Juros de Mora de 11/08/2016 até 31/08/2016
+18.239,91
+0,0000%
+-
+-
+0,00
+0,00
+0,00
+FGTS
+-
+-
+7.057,20
+1,000000000
+7.057,20
+0,00
+7.057,20
+Juros de Mora até 10/08/2016
+-
+-
+53,96
+1,000000000
+53,96
+0,00
+53,96
+Juros de Mora de 11/08/2016 até 31/08/2016
+7.057,20
+0,0000%
+-
+-
+0,00
+0,00
+0,00
+Total Parcial
+26.630,93
+0,00
+26.630,93
+Descontar dos Créditos do Reclamante
+Base
+Taxa
+Valor
+Índice
+Devido
+Pago
+Diferença
+Depósito de FGTS
+-
+-
+7.057,20
+1,000000000
+7.057,20
+0,00
+7.057,20
+Juros de Mora até 10/08/2016
+-
+-
+53,96
+1,000000000
+53,96
+0,00
+53,96
+Juros de Mora de 11/08/2016 até 31/08/2016
+7.057,20
+0,0000%
+-
+-
+0,00
+0,00
+0,00
+Desconto da Contribuição Social
+-
+-
+1.165,28
+1,000000000
+1.165,28
+0,00
+1.165,28
+Pensão Alimentícia - Remanescente
+-
+-
+6.704,74
+1,000000000
+6.704,74
+0,00
+6.704,74
+Pensão Alimentícia - sobre juros do período
+0,00
+30,0000%
+-
+-
+0,00
+0,00
+0,00
+Imposto de Renda devido pelo Reclamante
+-
+-
+-
+-
+0,00
+0,00
+0,00
+Total Parcial
+14.981,18
+0,00
+14.981,18
+Outros Débitos do Reclamado
+Base
+Taxa
+Valor
+Índice
+Devido
+Pago
+Diferença
+Contribuição Social sobre Salários Devidos
+-
+-
+-
+-
+3.608,60
+0,00
+3.608,60
+HONORÁRIOS ADVOCATÍCIOS SUCUMBENCIAIS devidos para ADVOGADO DE TESTE - Remanescente
+-
+-
+4.744,64
+1,000000000
+4.744,64
+0,00
+4.744,64
+HONORÁRIOS ADVOCATÍCIOS SUCUMBENCIAIS devidos para ADVOGADO DE TESTE - sobre juros do período
+0,00
+15,0000%
+-
+-
+0,00
+0,00
+0,00
+Custas Judiciais devidas pelo Reclamado
+-
+-
+-
+-
+3.714,50
+0,00
+3.714,50
+Total Parcial
+12.067,74
+0,00
+12.067,74
+Atualização liquidada por offline na versão 2.16.0 em 19/10/2026 às 08:56:20.
+Pág. 4 de
+4

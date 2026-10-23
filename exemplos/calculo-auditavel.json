@@ -1,0 +1,603 @@
+{
+  "processo": {
+    "numero": "0001234-45.2015.5.08.0001",
+    "valorCausa": 50000,
+    "autuadoEm": "2015-06-10",
+    "reclamante": {
+      "nome": "Maria de Teste",
+      "cpf": "111.444.777-35"
+    },
+    "reclamado": {
+      "nome": "Empresa Teste Ltda",
+      "cnpj": "11.222.333/0001-81"
+    }
+  },
+  "calculo": {
+    "uf": "PA",
+    "municipio": "Belém",
+    "admissao": "2013-03-01",
+    "demissao": "2015-04-15",
+    "ajuizamento": "2015-06-10",
+    "maiorRemuneracao": 1700,
+    "ultimaRemuneracao": 1700,
+    "historicoUltimaRemuneracao": {
+      "criar": true,
+      "_motivo": "reproduz o cálculo de referência montado na tela, que criou o histórico automaticamente"
+    },
+    "comentarios": "Exemplo auditavel: caso de referencia com contrato de dados (documentos, decisao, parcelas, remuneracoes e premissas ficticios)."
+  },
+  "historicosSalariais": [
+    {
+      "nome": "SALÁRIO BASE",
+      "fgts": true,
+      "inss": true,
+      "valores": [
+        {
+          "de": "2013-03",
+          "ate": "2013-12",
+          "valor": 1500
+        },
+        {
+          "de": "2014-01",
+          "ate": "2014-12",
+          "valor": 1600
+        },
+        {
+          "de": "2015-01",
+          "ate": "2015-04",
+          "valor": 1700
+        }
+      ],
+      "origem": [
+        "R1",
+        "R2",
+        "R3"
+      ]
+    }
+  ],
+  "faltas": [
+    {
+      "inicio": "2014-03-10",
+      "fim": "2014-03-12",
+      "justificada": false,
+      "origem": "A2"
+    }
+  ],
+  "verbas": [
+    {
+      "verba": "13º SALÁRIO",
+      "base": {
+        "historicos": [
+          "SALÁRIO BASE"
+        ]
+      },
+      "origem": "P3"
+    },
+    {
+      "verba": "AVISO PRÉVIO",
+      "origem": "P2"
+    },
+    {
+      "verba": "FÉRIAS + 1/3",
+      "origem": "P4"
+    },
+    {
+      "verba": "HORAS EXTRAS 50%",
+      "base": {
+        "historicos": [
+          "SALÁRIO BASE"
+        ]
+      },
+      "quantidade": 20,
+      "reflexos": [
+        "13º SALÁRIO SOBRE HORAS EXTRAS 50%",
+        "AVISO PRÉVIO SOBRE HORAS EXTRAS 50%",
+        "FÉRIAS + 1/3 SOBRE HORAS EXTRAS 50%",
+        "REPOUSO SEMANAL REMUNERADO E FERIADO SOBRE HORAS EXTRAS 50%"
+      ],
+      "origem": "P6"
+    },
+    {
+      "verba": "MULTA DO ARTIGO 477 DA CLT",
+      "origem": "P5"
+    },
+    {
+      "verba": "SALDO DE SALÁRIO",
+      "base": {
+        "historicos": [
+          "SALÁRIO BASE"
+        ]
+      },
+      "origem": "P1"
+    }
+  ],
+  "fgts": {
+    "multa": true,
+    "percentualMulta": 40
+  },
+  "honorarios": [
+    {
+      "tipo": "SUCUMBENCIAIS",
+      "descricao": "Honorários advocatícios sucumbenciais",
+      "devedor": "RECLAMADO",
+      "credor": {
+        "nome": "Advogado de Teste",
+        "cpf": "529.982.247-25"
+      },
+      "percentual": 15,
+      "base": "BRUTO",
+      "origem": "DEC1"
+    }
+  ],
+  "ferias": {
+    "periodos": [
+      {
+        "relativa": "2013/2014",
+        "situacao": "GOZADAS",
+        "gozos": [
+          {
+            "inicio": "2015-01-30",
+            "fim": "2015-02-28"
+          }
+        ],
+        "origem": "A1"
+      },
+      {
+        "relativa": "2014/2015",
+        "situacao": "INDENIZADAS",
+        "_fonte": "D4: não há aviso nem recibo de gozo do período 2014/2015; deferidas na sentença (DEC1)"
+      }
+    ]
+  },
+  "correcaoJuros": {
+    "origem": "DEC1",
+    "indice": "IPCAE",
+    "juros": "TRD_SIMPLES",
+    "jurosFasePreJudicial": true,
+    "combinacoesJuros": [
+      {
+        "juros": "SEM_JUROS",
+        "aPartirDe": "ajuizamento"
+      }
+    ]
+  },
+  "contrato": {
+    "dataLiquidacao": "2016-06-30",
+    "processos": [
+      {
+        "id": "PR0",
+        "numero": "0001234-45.2015.5.08.0001",
+        "relacao": "PRINCIPAL",
+        "fase": "LIQUIDACAO",
+        "trabalho": "CALCULO_NOVO"
+      }
+    ],
+    "fases": [
+      {
+        "processo": "PR0",
+        "evento": "AJUIZAMENTO",
+        "data": "2015-06-10"
+      },
+      {
+        "processo": "PR0",
+        "evento": "SENTENCA",
+        "data": "2015-11-20",
+        "documento": "D1",
+        "folha": "fl. 10-18"
+      },
+      {
+        "processo": "PR0",
+        "evento": "TRANSITO_EM_JULGADO",
+        "data": "2016-02-01",
+        "documento": "D12",
+        "folha": "fl. 20"
+      }
+    ],
+    "documentos": [
+      {
+        "id": "D1",
+        "tipo": "SENTENCA",
+        "identificacao": "Sentença (fictícia)",
+        "paginas": "10-18",
+        "data": "2015-11-20"
+      },
+      {
+        "id": "D2",
+        "tipo": "HOLERITES",
+        "identificacao": "Contracheques 03/2013 a 04/2015 (fictícios)",
+        "paginas": "40-65",
+        "periodo": {
+          "inicio": "2013-03",
+          "fim": "2015-04"
+        }
+      },
+      {
+        "id": "D3",
+        "tipo": "CARTOES_DE_PONTO",
+        "identificacao": "Cartões de ponto (fictícios)",
+        "paginas": "66-120",
+        "periodo": {
+          "inicio": "2013-03",
+          "fim": "2015-04"
+        }
+      },
+      {
+        "id": "D4",
+        "tipo": "AVISO_E_RECIBO_DE_FERIAS",
+        "identificacao": "Aviso e recibo de férias 2013/2014, assinados (fictícios)",
+        "paginas": "121-122"
+      },
+      {
+        "id": "D10",
+        "tipo": "EXTRATO_FGTS",
+        "identificacao": "Extrato analítico do FGTS (fictício)",
+        "paginas": "123-126",
+        "periodo": {
+          "inicio": "2013-03",
+          "fim": "2015-04"
+        }
+      },
+      {
+        "id": "D11",
+        "tipo": "TRCT",
+        "identificacao": "Termo de rescisão sem quitação das verbas (fictício)",
+        "paginas": "127-128"
+      },
+      {
+        "id": "D12",
+        "tipo": "CERTIDAO_DE_TRANSITO_EM_JULGADO",
+        "identificacao": "Certidão de trânsito em julgado, sem recurso (fictícia)",
+        "paginas": "20",
+        "data": "2016-02-01"
+      }
+    ],
+    "coleta": [
+      {
+        "id": "C1",
+        "requisito": "DECISOES_POSTERIORES",
+        "documento": "certidão de trânsito em julgado",
+        "motivo": "confirmar que não houve recurso",
+        "status": "RECEBIDO",
+        "recebidoComo": "D12"
+      },
+      {
+        "id": "C2",
+        "requisito": "FGTS",
+        "documento": "extrato analítico do FGTS",
+        "motivo": "depósitos e base da multa de 40%",
+        "status": "RECEBIDO",
+        "recebidoComo": "D10"
+      }
+    ],
+    "decisoes": [
+      {
+        "id": "DEC1",
+        "documento": "D1",
+        "tipo": "SENTENCA",
+        "folha": "fl. 15",
+        "trecho": "Julgo procedentes: saldo de salário, aviso prévio indenizado, 13º e férias + 1/3 proporcionais e vencidas, multa do art. 477, horas extras (20 por mês, adicional de 50%) com reflexos em 13º, aviso, férias + 1/3 e RSR; FGTS + 40%; honorários de 15% sobre o bruto. Correção monetária pelo IPCA-E e juros de mora na forma da lei.",
+        "processo": "PR0",
+        "instancia": "VARA",
+        "publicacao": "2015-11-20",
+        "capitulos": [
+          {
+            "parcela": "P1",
+            "efeito": "DEFERE",
+            "folha": "fl. 15"
+          },
+          {
+            "parcela": "P2",
+            "efeito": "DEFERE",
+            "folha": "fl. 15"
+          },
+          {
+            "parcela": "P3",
+            "efeito": "DEFERE",
+            "folha": "fl. 15"
+          },
+          {
+            "parcela": "P4",
+            "efeito": "DEFERE",
+            "folha": "fl. 15"
+          },
+          {
+            "parcela": "P5",
+            "efeito": "DEFERE",
+            "folha": "fl. 15"
+          },
+          {
+            "parcela": "P6",
+            "efeito": "DEFERE",
+            "folha": "fl. 16"
+          },
+          {
+            "parcela": "P7",
+            "efeito": "DEFERE",
+            "folha": "fl. 16"
+          },
+          {
+            "criterio": "ATUALIZACAO",
+            "efeito": "DEFERE",
+            "folha": "fl. 16",
+            "trecho": "Correção monetária pelo IPCA-E e juros de mora na forma da lei."
+          },
+          {
+            "criterio": "HONORARIOS",
+            "efeito": "DEFERE",
+            "folha": "fl. 16",
+            "trecho": "honorários de 15% sobre o bruto"
+          }
+        ],
+        "transito": "2016-02-01"
+      }
+    ],
+    "parcelas": [
+      {
+        "id": "P1",
+        "rubrica": "SALDO DE SALÁRIO",
+        "situacao": "DEFERIDA",
+        "decisao": "DEC1",
+        "folha": "fl. 15"
+      },
+      {
+        "id": "P2",
+        "rubrica": "AVISO PRÉVIO",
+        "situacao": "DEFERIDA",
+        "decisao": "DEC1",
+        "folha": "fl. 15"
+      },
+      {
+        "id": "P3",
+        "rubrica": "13º SALÁRIO",
+        "situacao": "DEFERIDA",
+        "decisao": "DEC1",
+        "folha": "fl. 15"
+      },
+      {
+        "id": "P4",
+        "rubrica": "FÉRIAS + 1/3",
+        "situacao": "DEFERIDA",
+        "decisao": "DEC1",
+        "folha": "fl. 15"
+      },
+      {
+        "id": "P5",
+        "rubrica": "MULTA DO ARTIGO 477 DA CLT",
+        "situacao": "DEFERIDA",
+        "decisao": "DEC1",
+        "folha": "fl. 15"
+      },
+      {
+        "id": "P6",
+        "rubrica": "HORAS EXTRAS 50%",
+        "situacao": "DEFERIDA",
+        "decisao": "DEC1",
+        "folha": "fl. 16",
+        "periodo": {
+          "inicio": "2013-03-01",
+          "fim": "2015-04-15"
+        },
+        "reflexos": [
+          "13º SALÁRIO",
+          "AVISO PRÉVIO",
+          "FÉRIAS + 1/3",
+          "REPOUSO SEMANAL REMUNERADO E FERIADO"
+        ],
+        "premissas": [
+          "PR1"
+        ]
+      },
+      {
+        "id": "P7",
+        "rubrica": "FGTS + 40%",
+        "situacao": "DEFERIDA",
+        "decisao": "DEC1",
+        "folha": "fl. 16",
+        "naoCalcular": "apurado no bloco fgts (não é verba)"
+      }
+    ],
+    "afastamentos": [
+      {
+        "id": "A1",
+        "tipo": "FERIAS",
+        "natureza": "GOZO_DOCUMENTADO",
+        "inicio": "2015-01-30",
+        "fim": "2015-02-28",
+        "documento": "D4",
+        "folha": "fl. 121",
+        "trecho": "gozo de 30/01/2015 a 28/02/2015, período aquisitivo 2013/2014",
+        "efeito": "EXCLUI_TRABALHO",
+        "premissas": [
+          "PR2"
+        ]
+      },
+      {
+        "id": "A2",
+        "tipo": "FALTA",
+        "natureza": "EVENTO_DOCUMENTADO",
+        "inicio": "2014-03-10",
+        "fim": "2014-03-12",
+        "documento": "D3",
+        "folha": "fl. 78",
+        "trecho": "faltas não justificadas em 10, 11 e 12/03/2014",
+        "efeito": "EXCLUI_TRABALHO",
+        "premissas": [
+          "PR3"
+        ]
+      }
+    ],
+    "remuneracoes": [
+      {
+        "id": "R1",
+        "componente": "SALARIO_FIXO",
+        "de": "2013-03",
+        "ate": "2013-12",
+        "valor": 1500,
+        "documento": "D2"
+      },
+      {
+        "id": "R2",
+        "componente": "SALARIO_FIXO",
+        "de": "2014-01",
+        "ate": "2014-12",
+        "valor": 1600,
+        "documento": "D2"
+      },
+      {
+        "id": "R3",
+        "componente": "SALARIO_FIXO",
+        "de": "2015-01",
+        "ate": "2015-04",
+        "valor": 1700,
+        "documento": "D2"
+      }
+    ],
+    "premissas": [
+      {
+        "id": "PR1",
+        "texto": "20 horas extras por mês em todo o período",
+        "status": "CONFIRMADA",
+        "documento": "D1",
+        "folha": "fl. 16",
+        "fundamento": "quantidade fixada na sentença"
+      },
+      {
+        "id": "PR2",
+        "texto": "gozo das férias 2013/2014 de 30/01 a 28/02/2015",
+        "status": "CONFIRMADA",
+        "documento": "D4",
+        "folha": "fl. 121",
+        "fundamento": "aviso e recibo assinados, sem impugnação; sem horas extras deferidas nesse período"
+      },
+      {
+        "id": "PR3",
+        "texto": "faltas não justificadas de 10 a 12/03/2014",
+        "status": "CONFIRMADA",
+        "documento": "D3",
+        "folha": "fl. 78",
+        "fundamento": "registradas no cartão de ponto, que a sentença declarou válido"
+      }
+    ],
+    "devedores": [
+      {
+        "id": "R1",
+        "nome": "Empresa Teste Ltda",
+        "cnpj": "11.222.333/0001-81",
+        "responsabilidade": "PRINCIPAL"
+      }
+    ],
+    "aprovacao": {
+      "por": "Usuário de teste (exemplo)",
+      "em": "2016-06-01T12:00:00.000Z",
+      "observacoes": "plano conferido com a sentença e a certidão de trânsito",
+      "hashContrato": "481ffe7ae268514e826498f95d293776bfaadc95722f6268d901d91a174f22c2"
+    },
+    "leitura": [
+      {
+        "documento": "D1",
+        "classificacao": {
+          "usadas": "10-18"
+        },
+        "observacao": "sentença lida por inteiro: relatório, fundamentação e dispositivo"
+      },
+      {
+        "documento": "D12",
+        "classificacao": {
+          "usadas": "20"
+        }
+      },
+      {
+        "documento": "D2",
+        "classificacao": {
+          "usadas": "40-65"
+        },
+        "lidaComoImagem": "40-65",
+        "fechamentos": [
+          {
+            "tipo": "HOLERITE",
+            "referencia": "2013-03 a 2015-04",
+            "ok": true,
+            "detalhe": "proventos − descontos = líquido em todas as competências"
+          }
+        ]
+      },
+      {
+        "documento": "D3",
+        "classificacao": {
+          "usadas": "66-120"
+        },
+        "fechamentos": [
+          {
+            "tipo": "CARTAO_DE_PONTO",
+            "referencia": "2013-03 a 2015-04",
+            "ok": true,
+            "detalhe": "soma diária = total mensal"
+          }
+        ]
+      },
+      {
+        "documento": "D4",
+        "classificacao": {
+          "usadas": "121-122"
+        }
+      },
+      {
+        "documento": "D10",
+        "classificacao": {
+          "usadas": "123-126"
+        },
+        "fechamentos": [
+          {
+            "tipo": "EXTRATO_FGTS",
+            "ok": true,
+            "detalhe": "soma dos depósitos = saldo informado (nenhum depósito)"
+          }
+        ]
+      },
+      {
+        "documento": "D11",
+        "classificacao": {
+          "usadas": "127",
+          "irrelevantes": [
+            {
+              "folhas": "128",
+              "motivo": "verso com instruções impressas do formulário"
+            }
+          ]
+        },
+        "fechamentos": [
+          {
+            "tipo": "TRCT",
+            "ok": true,
+            "detalhe": "campos sem valores: verbas rescisórias não quitadas"
+          }
+        ]
+      }
+    ],
+    "confrontos": [
+      {
+        "tipo": "DATAS",
+        "documentos": [
+          "D11",
+          "D1"
+        ],
+        "ok": true,
+        "detalhe": "admissão e saída do TRCT iguais às fixadas na sentença"
+      }
+    ],
+    "pedidos": [
+      {
+        "pedido": "Horas extras com reflexos",
+        "documento": "D1",
+        "situacao": "DEFERIDO",
+        "decisao": "DEC1"
+      },
+      {
+        "pedido": "Verbas rescisórias",
+        "documento": "D1",
+        "situacao": "DEFERIDO",
+        "decisao": "DEC1"
+      }
+    ]
+  }
+}

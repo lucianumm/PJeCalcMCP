@@ -1,0 +1,45 @@
+{
+  "//": "Snippets de registro do servidor MCP do PJe-Calc. Substitua <PASTA> pela pasta deste repositório (ex.: C:\\PJeCalc\\pjecalc-windows64-2.16.0\\pjecalc-mcp-skill) e <RAIZ_DO_PJECALC> pela pasta do PJe-Calc (ex.: C:\\PJeCalc\\pjecalc-windows64-2.16.0). PJECALC_HOME é opcional quando o repositório está dentro da pasta do PJe-Calc.",
+  "claude_desktop": {
+    "mcpServers": {
+      "pjecalc": {
+        "command": "C:\\Program Files\\nodejs\\node.exe",
+        "args": [
+          "<PASTA>\\server\\server.mjs"
+        ],
+        "env": {
+          "PJECALC_HOME": "<RAIZ_DO_PJECALC>"
+        }
+      }
+    }
+  },
+  "claude_code": {
+    "mcpServers": {
+      "pjecalc": {
+        "type": "stdio",
+        "command": "C:\\Program Files\\nodejs\\node.exe",
+        "args": [
+          "<PASTA>\\server\\server.mjs"
+        ],
+        "env": {
+          "PJECALC_HOME": "<RAIZ_DO_PJECALC>"
+        }
+      }
+    }
+  },
+  "codex_toml": "[mcp_servers.pjecalc]\ncommand = \"C:\\\\Program Files\\\\nodejs\\\\node.exe\"\nargs = [\"<PASTA>\\\\server\\\\server.mjs\"]\nenv = { PJECALC_HOME = \"<RAIZ_DO_PJECALC>\" }",
+  "cursor_vscode_windsurf": {
+    "mcpServers": {
+      "pjecalc": {
+        "command": "C:\\Program Files\\nodejs\\node.exe",
+        "args": [
+          "<PASTA>\\server\\server.mjs"
+        ],
+        "env": {
+          "PJECALC_HOME": "<RAIZ_DO_PJECALC>"
+        }
+      }
+    }
+  },
+  "claude_code_cli": "claude mcp add pjecalc --scope user -e PJECALC_HOME=<RAIZ_DO_PJECALC> -- node <PASTA>\\server\\server.mjs"
+}
