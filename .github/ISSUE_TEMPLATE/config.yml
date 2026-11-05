@@ -1,0 +1,8 @@
+blank_issues_enabled: false
+contact_links:
+  - name: Instalação e uso
+    url: https://github.com/lucianumm/PJeCalcMCP#como-instalar
+    about: Confira requisitos, instalação e respostas às dúvidas frequentes no README.
+  - name: Comunicar uma vulnerabilidade em privado
+    url: https://github.com/lucianumm/PJeCalcMCP/security/policy
+    about: Consulte o contato e as orientações da política de segurança antes de publicar detalhes.

@@ -1,0 +1,27 @@
+name: Sugerir uma melhoria
+description: Proponha um recurso ou uma melhoria para o uso do PJe-Calc MCP.
+title: "[Melhoria] "
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Descreva o caso de uso com dados fictícios e confira se já existe uma sugestão semelhante.
+  - type: textarea
+    id: problema
+    attributes:
+      label: Qual problema você quer resolver?
+      description: Explique a tarefa e a limitação encontrada no comportamento atual.
+    validations:
+      required: true
+  - type: textarea
+    id: proposta
+    attributes:
+      label: Comportamento proposto
+      description: Descreva o resultado desejado e, se houver, como ele se relaciona com uma função do PJe-Calc.
+    validations:
+      required: true
+  - type: textarea
+    id: alternativas
+    attributes:
+      label: Alternativas e contexto
+      description: Informe soluções que tentou, versões relevantes e exemplos fictícios, sem dados de processos reais.

@@ -1,0 +1,121 @@
+{
+  "processo": {
+    "numero": "0001234-45.2015.5.08.0001",
+    "valorCausa": 50000,
+    "reclamante": {
+      "nome": "Maria de Teste Externo"
+    },
+    "reclamado": {
+      "nome": "Empresa Teste Ltda"
+    }
+  },
+  "dataBase": "2016-06-30",
+  "parametros": {
+    "indice": "IPCAE",
+    "juros": "TRD_SIMPLES",
+    "irpf": {
+      "meses": 28
+    }
+  },
+  "creditos": {
+    "verbasTributaveis": {
+      "valor": 10000,
+      "juros": 1000
+    }
+  },
+  "descontos": {
+    "contribuicaoSocialSegurado": 1100,
+    "previdenciaPrivada": 300,
+    "pensao": {
+      "aliquota": 10,
+      "incidirSobreJuros": true,
+      "principalTributavel": 100
+    },
+    "custasReclamante": {
+      "valor": 200,
+      "juros": 0
+    },
+    "multasTerceiros": [
+      {
+        "descricao": "Multa a terceiro",
+        "credor": "Terceiro de Teste",
+        "valor": 150
+      }
+    ]
+  },
+  "outrosDebitos": {
+    "contribuicaoSocialSegurado": {
+      "ateFev2009": {
+        "valor": 400,
+        "juros": 300
+      },
+      "aposFev2009": {
+        "valor": 1100,
+        "juros": 200
+      }
+    },
+    "contribuicaoSocialPatronal": {
+      "ateFev2009": {
+        "valor": 900,
+        "juros": 600
+      },
+      "aposFev2009": {
+        "valor": 2300,
+        "juros": 400
+      }
+    },
+    "multaContribuicaoSocial": {
+      "aposFev2009": "2015-05-20"
+    },
+    "contribuicaoSocialPagos": {
+      "valor": 500,
+      "juros": 100
+    },
+    "multaContribuicaoSocialPagos": "2015-05-20",
+    "jurosPrevidenciaPrivada": 50,
+    "contribuicaoSocial10": 800,
+    "contribuicaoSocial05": 40,
+    "custasLiquidacao": {
+      "valor": 150,
+      "juros": 0
+    },
+    "custasExecucao": {
+      "valor": 100,
+      "juros": 0
+    }
+  },
+  "debitosReclamante": {
+    "multas": [
+      {
+        "descricao": "Multa por litigancia de ma-fe",
+        "credor": "Empresa Teste Ltda",
+        "valor": 250
+      }
+    ],
+    "honorarios": [
+      {
+        "descricao": "Honorarios sucumbenciais do reclamado",
+        "credor": "Advogado do Reclamado",
+        "cpf": "529.982.247-25",
+        "tipo": "SUCUMBENCIAIS",
+        "valor": 600
+      }
+    ]
+  },
+  "execucao": {
+    "dataAtualizacao": "2016-08-31",
+    "identificacao": "externo Y",
+    "cobrarEncargosIrpf": false,
+    "pagamentos": [
+      {
+        "data": "2016-07-20",
+        "valor": 5000,
+        "priorizarJuros": false,
+        "credito": {
+          "principal": "apurar"
+        }
+      }
+    ]
+  },
+  "_descricao": "Conta homologada feita fora do PJe-Calc com as parcelas menos comuns (contribuição social até e após fev/2009 com multa, contribuição sobre salários pagos, previdência privada e seus juros, pensão com base própria, contribuições de 10% e 0,5% da LC 110, custas do reclamante, de liquidação e de execução, multa a terceiro e débitos do reclamante), atualizada até 31/08/2016 com um pagamento. Gabarito: o mesmo conjunto lançado à mão nas telas."
+}

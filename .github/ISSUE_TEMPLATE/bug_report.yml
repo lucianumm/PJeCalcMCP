@@ -1,0 +1,59 @@
+name: Relatar uma falha
+description: Informe um problema de instalação, integração ou cálculo com um exemplo reproduzível.
+title: "[Falha] "
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Use dados fictícios. Não publique documentos de processos, dados pessoais ou credenciais.
+        Possíveis vulnerabilidades devem ser enviadas em privado conforme a [política de segurança](https://github.com/lucianumm/PJeCalcMCP/security/policy).
+  - type: textarea
+    id: ambiente
+    attributes:
+      label: Ambiente e versões
+      description: Informe as versões; se não souber alguma, escreva isso.
+      placeholder: |
+        PJe-Calc MCP:
+        PJe-Calc Cidadão:
+        Windows:
+        Node.js (node --version):
+        Assistente de IA e versão:
+        Instalação por ZIP, MCPB ou clone:
+    validations:
+      required: true
+  - type: textarea
+    id: reproducao
+    attributes:
+      label: Como reproduzir
+      description: Descreva os passos, a ferramenta MCP usada e um exemplo mínimo com dados fictícios.
+      placeholder: |
+        1. ...
+        2. ...
+    validations:
+      required: true
+  - type: textarea
+    id: esperado
+    attributes:
+      label: Resultado esperado
+      description: Se houver diferença de cálculo, mostre o valor esperado e como foi obtido.
+    validations:
+      required: true
+  - type: textarea
+    id: observado
+    attributes:
+      label: Resultado observado
+      description: Copie a mensagem de erro ou descreva a diferença encontrada.
+    validations:
+      required: true
+  - type: textarea
+    id: contexto
+    attributes:
+      label: Contexto adicional
+      description: Logs ou imagens são opcionais. Revise dados pessoais, tokens e caminhos antes de anexar.
+  - type: checkboxes
+    id: privacidade
+    attributes:
+      label: Privacidade
+      options:
+        - label: Revisei o relato e os anexos e removi dados reais de processos, dados pessoais e credenciais.
+          required: true

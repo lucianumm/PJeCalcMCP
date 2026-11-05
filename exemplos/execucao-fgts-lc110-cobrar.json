@@ -1,0 +1,43 @@
+{
+  "_descricao": "Bloco execucao para calculo_atualizar sobre scripts/fixtures/calculo-liquidado-lc110.PJC (liquidado em 30/06/2016): um pagamento cujo crédito inclui o FGTS (a tela recolhe o depósito sozinha), recolhe a contribuição social do reclamante, paga a contribuição social patronal e as contribuições de 10% e 0,5% da LC 110 como outros débitos do reclamado e cobra à parte do reclamante a multa a terceiro e os honorários marcados para cobrança; atualização até 31/08/2016. Gabarito: o mesmo pagamento lançado à mão na tela do PJe-Calc.",
+  "dataAtualizacao": "2016-08-31",
+  "identificacao": "fl. 500",
+  "cobrarEncargosIrpf": false,
+  "pagamentos": [
+    {
+      "data": "2016-07-15",
+      "valor": 20000,
+      "folha": "fl. 480",
+      "priorizarJuros": true,
+      "creditoReclamante": 14000,
+      "credito": {
+        "principal": "apurar",
+        "fgts": "apurar"
+      },
+      "recolher": {
+        "contribuicaoSocial": "apurar"
+      },
+      "outrosDebitosReclamado": 5000,
+      "outros": {
+        "inssSalariosDevidos": "apurar",
+        "inss10": "apurar",
+        "inss05": "apurar"
+      },
+      "debitosCobrarReclamante": 1000,
+      "cobrar": {
+        "multas": [
+          {
+            "descricao": "Multa ao sindicato",
+            "apurar": true
+          }
+        ],
+        "honorarios": [
+          {
+            "credor": "Advogada da Reclamada",
+            "apurar": true
+          }
+        ]
+      }
+    }
+  ]
+}

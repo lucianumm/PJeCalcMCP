@@ -1,0 +1,87 @@
+{
+  "_descricao": "Bloco execucao para calculo_atualizar sobre scripts/fixtures/calculo-liquidado-referencia.PJC (liquidado em 30/06/2016): honorários periciais da execução com IRRF e IR sobre os juros, custas por ato (atos rurais, agravo de instrumento, impugnação, embargos à arrematação, à execução e de terceiros, recurso de revista) e dois pagamentos que recolhem contribuição social e IR do reclamante e pagam custas, contribuição social patronal e honorários como outros débitos do reclamado, atualização até 31/08/2016. Gabarito: o mesmo conjunto lançado à mão nas telas do PJe-Calc.",
+  "dataAtualizacao": "2016-08-31",
+  "identificacao": "fl. 450",
+  "cobrarEncargosIrpf": false,
+  "honorarios": [
+    {
+      "tipo": "PERICIAIS_CONTADOR",
+      "descricao": "Honorários Periciais - Contador",
+      "devedor": "RECLAMADO",
+      "credor": {
+        "nome": "Perito Contador de Teste",
+        "cpf": "529.982.247-25"
+      },
+      "valor": 2000,
+      "dataVencimento": "2016-07-20",
+      "dataEvento": "2016-07-20",
+      "folha": "fl. 410",
+      "apurarIrrf": true,
+      "tipoImpostoRenda": "PESSOA_FISICA",
+      "irSobreJuros": true,
+      "aplicarJuros": true,
+      "jurosAPartirDe": "2016-07-20"
+    }
+  ],
+  "custas": {
+    "folha": "fl. 420",
+    "fixas": [
+      {
+        "vencimento": "2016-07-25",
+        "atosRurais": 1,
+        "agravosDeInstrumento": 1,
+        "impugnacaoSentenca": 1,
+        "embargosArrematacao": 1,
+        "embargosExecucao": 1,
+        "embargosTerceiros": 1,
+        "recursoRevista": 1
+      }
+    ]
+  },
+  "pagamentos": [
+    {
+      "data": "2016-07-15",
+      "valor": 15000,
+      "folha": "fl. 430",
+      "priorizarJuros": true,
+      "creditoReclamante": 12000,
+      "credito": {
+        "principal": "apurar"
+      },
+      "recolher": {
+        "contribuicaoSocial": "apurar",
+        "imposto": "apurar"
+      },
+      "outrosDebitosReclamado": 3000,
+      "outros": {
+        "custas": "apurar",
+        "inssSalariosDevidos": "apurar",
+        "honorarios": [
+          {
+            "credor": "Advogado de Teste",
+            "apurar": true
+          }
+        ]
+      }
+    },
+    {
+      "data": "2016-08-10",
+      "valor": 3000,
+      "folha": "fl. 440",
+      "priorizarJuros": false,
+      "creditoReclamante": 1000,
+      "credito": {
+        "principal": "apurar"
+      },
+      "outrosDebitosReclamado": 2000,
+      "outros": {
+        "honorarios": [
+          {
+            "credor": "Perito Contador de Teste",
+            "apurar": true
+          }
+        ]
+      }
+    }
+  ]
+}

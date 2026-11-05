@@ -1,0 +1,53 @@
+{
+  "schema_version": "1.0",
+  "events": [
+    {
+      "id": "EV-1",
+      "client_record_id": "R1",
+      "quote": "admitida em 01/03/2013",
+      "kind": "hiring",
+      "description": "admissão",
+      "happened": {
+        "precision": "exact",
+        "value": "2013-03-01",
+        "end": null
+      }
+    },
+    {
+      "id": "EV-2",
+      "client_record_id": "R1",
+      "quote": "dispensada em 15/04/2015",
+      "kind": "termination",
+      "description": "dispensa",
+      "happened": {
+        "precision": "exact",
+        "value": "2015-04-15",
+        "end": null
+      }
+    },
+    {
+      "id": "EV-3",
+      "client_record_id": "R1",
+      "quote": "afastada pelo INSS",
+      "kind": "leave",
+      "description": "auxílio-doença",
+      "happened": {
+        "precision": "range",
+        "value": "2014-05-01",
+        "end": "2014-06-30"
+      }
+    },
+    {
+      "id": "EV-4",
+      "client_record_id": "R1",
+      "quote": "mudou de função",
+      "kind": "role_change",
+      "description": "promoção",
+      "happened": {
+        "precision": "unknown",
+        "value": null,
+        "end": null
+      }
+    }
+  ]
+}

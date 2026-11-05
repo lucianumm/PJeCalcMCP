@@ -1,0 +1,470 @@
+PJe-Calc
+Sistema de Cálculos Trabalhistas
+Processo:
+0001234-45.2015.5.08.0001
+793
+PLANILHA DE ATUALIZAÇÃO DE CÁLCULO
+Reclamante:
+MARIA DE TESTE EXTERNO
+Reclamado:
+EMPRESA TESTE LTDA
+Data Últ. Atualização:
+30/06/2016
+Data Liquidação:
+Resumo da Atualização do Cálculo
+Descrição do Saldo Devedor por Credor
+Valor
+LÍQUIDO DEVIDO AO RECLAMANTE
+3.240,35
+DEPÓSITO FGTS
+0,00
+CONTRIBUIÇÃO SOCIAL SOBRE SALÁRIOS DEVIDOS
+6.974,94
+CONTRIBUIÇÃO SOCIAL SOBRE SALÁRIOS PAGOS
+711,35
+PREVIDÊNCIA PRIVADA
+353,48
+PENSÃO ALIMENTÍCIA
+1.113,26
+MULTA A TERCEIRO PARA TERCEIRO DE TESTE
+151,49
+IRPF DEVIDO PELO RECLAMANTE
+0,00
+CONTRIBUIÇÃO SOCIAL 10% (LEI COMPLEMENTAR 110/2001)
+807,94
+CONTRIBUIÇÃO SOCIAL 0,5% (LEI COMPLEMENTAR 110/2001)
+40,40
+CUSTAS JUDICIAIS DEVIDAS PELO RECLAMADO
+252,48
+CUSTAS JUDICIAIS DEVIDAS PELO RECLAMANTE
+201,98
+Total Devido Pelo Reclamado
+13.847,67
+Descrição do Saldo Devedor por Credor
+Valor
+MULTA POR LITIGANCIA DE MA-FE PARA EMPRESA TESTE LTDA
+252,48
+HONORÁRIOS LÍQUIDOS PARA ADVOGADO DO RECLAMADO
+605,95
+IRRF SOBRE HONORÁRIOS PARA ADVOGADO DO RECLAMADO
+0,00
+Total Devido Pelo Reclamante
+858,43
+Eventos ocorridos: Pagamento em 20/07/2016 no valor de R$ 5.000,00.
+Atualização liquidada por offline na versão 2.16.0 em 21/10/2026 às 21:07:31.
+Pág. 1 de
+4
+Processo:
+0001234-45.2015.5.08.0001
+793
+PLANILHA DE ATUALIZAÇÃO DE CÁLCULO
+Reclamante:
+MARIA DE TESTE EXTERNO
+Reclamado:
+EMPRESA TESTE LTDA
+Data Últ. Atualização:
+Data Liquidação:
+Demonstrativo da Atualização do Cálculo
+Atualização do Cálculo (EXTERNO Y) até 20/07/2016, data do(s) evento(s) Pagamento (FL. 460).
+Créditos do Reclamante
+Base
+Taxa
+Valor
+Índice
+Devido
+Pago
+Diferença
+Principal Corrigido
+-
+-
+10.000,00
+1,005400000
+10.054,00
+4.541,48
+5.512,52
+Juros de Mora até 30/06/2016
+-
+-
+1.000,00
+1,005400000
+1.005,40
+454,15
+551,25
+Juros de Mora de 01/07/2016 até 20/07/2016
+8.954,00
+0,1080%
+-
+-
+9,67
+4,37
+5,30
+Total Parcial
+11.069,07
+5.000,00
+6.069,07
+Descontar dos Créditos do Reclamante
+Base
+Taxa
+Valor
+Índice
+Devido
+Pago
+Diferença
+Desconto da Contribuição Social
+-
+-
+1.100,00
+1,000000000
+1.100,00
+0,00
+1.100,00
+Previdência Privada
+-
+-
+300,00
+1,005400000
+301,62
+0,00
+301,62
+Pensão Alimentícia
+11.069,07
+10,0000%
+-
+-
+1.106,91
+0,00
+1.106,91
+MULTA A TERCEIRO devida para TERCEIRO DE TESTE
+-
+-
+150,00
+1,005400000
+150,81
+0,00
+150,81
+Imposto de Renda devido pelo Reclamante
+-
+-
+-
+-
+0,00
+0,00
+0,00
+Custas Judiciais devidas pelo Reclamante
+-
+-
+-
+-
+201,08
+0,00
+201,08
+Total Parcial
+2.860,42
+0,00
+2.860,42
+Outros Débitos do Reclamado
+Base
+Taxa
+Valor
+Índice
+Devido
+Pago
+Diferença
+Contribuição Social sobre Salários Devidos
+-
+-
+-
+-
+5.831,32
+0,00
+5.831,32
+Contribuição Social sobre Salários Pagos
+-
+-
+-
+-
+705,80
+0,00
+705,80
+Juros de Previdência Privada até 30/06/2016
+-
+-
+50,00
+1,005400000
+50,27
+0,00
+50,27
+Atualização liquidada por offline na versão 2.16.0 em 21/10/2026 às 21:07:31.
+Pág. 2 de
+4
+Juros de Previdência Privada de 01/07/2016 até 20/07/2016
+0,00
+0,1080%
+-
+-
+0,00
+0,00
+0,00
+Contribuição Social 10% - Lei Complementar 110/2001
+-
+-
+800,00
+1,005400000
+804,32
+0,00
+804,32
+Contribuição Social 0,5% - Lei Complementar 110/2001
+-
+-
+40,00
+1,005400000
+40,22
+0,00
+40,22
+Custas Judiciais devidas pelo Reclamado
+-
+-
+-
+-
+251,35
+0,00
+251,35
+Total Parcial
+7.683,28
+0,00
+7.683,28
+Débitos do Reclamante
+Base
+Taxa
+Valor
+Índice
+Devido
+Pago
+Diferença
+MULTA POR LITIGANCIA DE MA-FE devida para EMPRESA TESTE LTDA
+-
+-
+250,00
+1,005400000
+251,35
+0,00
+251,35
+HONORARIOS SUCUMBENCIAIS DO RECLAMADO devidos para ADVOGADO DO RECLAMADO
+-
+-
+600,00
+1,005400000
+603,24
+0,00
+603,24
+Total Parcial
+854,59
+0,00
+854,59
+Saldo Devedor em 31/08/2016
+Créditos do Reclamante
+Base
+Taxa
+Valor
+Índice
+Devido
+Pago
+Diferença
+Principal Corrigido
+-
+-
+5.512,52
+1,004500000
+5.537,33
+0,00
+5.537,33
+Juros de Mora até 20/07/2016
+-
+-
+556,55
+1,004500000
+559,05
+0,00
+559,05
+Juros de Mora de 21/07/2016 até 31/08/2016
+4.437,33
+0,3082%
+-
+-
+13,68
+0,00
+13,68
+Total Parcial
+6.110,06
+0,00
+6.110,06
+Descontar dos Créditos do Reclamante
+Base
+Taxa
+Valor
+Índice
+Devido
+Pago
+Diferença
+Desconto da Contribuição Social
+-
+-
+1.100,00
+1,000000000
+1.100,00
+0,00
+1.100,00
+Previdência Privada
+-
+-
+301,62
+1,004500000
+302,98
+0,00
+302,98
+Pensão Alimentícia - Remanescente
+-
+-
+1.106,91
+1,004500000
+1.111,89
+0,00
+1.111,89
+Pensão Alimentícia - sobre juros do período
+13,68
+10,0000%
+-
+-
+1,37
+0,00
+1,37
+MULTA A TERCEIRO devida para TERCEIRO DE TESTE
+-
+-
+150,81
+1,004500000
+151,49
+0,00
+151,49
+Imposto de Renda devido pelo Reclamante
+-
+-
+-
+-
+0,00
+0,00
+0,00
+Custas Judiciais devidas pelo Reclamante
+-
+-
+-
+-
+201,98
+0,00
+201,98
+Total Parcial
+2.869,71
+0,00
+2.869,71
+Outros Débitos do Reclamado
+Base
+Taxa
+Valor
+Índice
+Devido
+Pago
+Diferença
+Atualização liquidada por offline na versão 2.16.0 em 21/10/2026 às 21:07:31.
+Pág. 3 de
+4
+Contribuição Social sobre Salários Devidos
+-
+-
+-
+-
+5.874,94
+0,00
+5.874,94
+Contribuição Social sobre Salários Pagos
+-
+-
+-
+-
+711,35
+0,00
+711,35
+Juros de Previdência Privada até 20/07/2016
+-
+-
+50,27
+1,004500000
+50,50
+0,00
+50,50
+Juros de Previdência Privada de 21/07/2016 até 31/08/2016
+0,00
+0,3082%
+-
+-
+0,00
+0,00
+0,00
+Contribuição Social 10% - Lei Complementar 110/2001
+-
+-
+804,32
+1,004500000
+807,94
+0,00
+807,94
+Contribuição Social 0,5% - Lei Complementar 110/2001
+-
+-
+40,22
+1,004500000
+40,40
+0,00
+40,40
+Custas Judiciais devidas pelo Reclamado
+-
+-
+-
+-
+252,48
+0,00
+252,48
+Total Parcial
+7.737,61
+0,00
+7.737,61
+Débitos do Reclamante
+Base
+Taxa
+Valor
+Índice
+Devido
+Pago
+Diferença
+MULTA POR LITIGANCIA DE MA-FE devida para EMPRESA TESTE LTDA
+-
+-
+251,35
+1,004500000
+252,48
+0,00
+252,48
+HONORARIOS SUCUMBENCIAIS DO RECLAMADO devidos para ADVOGADO DO RECLAMADO
+-
+-
+603,24
+1,004500000
+605,95
+0,00
+605,95
+Total Parcial
+858,43
+0,00
+858,43
+Atualização liquidada por offline na versão 2.16.0 em 21/10/2026 às 21:07:31.
+Pág. 4 de
+4

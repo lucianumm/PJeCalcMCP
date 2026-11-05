@@ -1,0 +1,14 @@
+# fora da extensão do Claude Desktop (instalador, testes e arquivos locais)
+saida/
+node/
+instalador/
+scripts/
+java/classes/
+java/src/
+java/compilar.sh
+*.bat
+mcp-config.json
+*.mcpb
+server.json
+glama.json
+.github/

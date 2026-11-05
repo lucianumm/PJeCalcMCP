@@ -1,0 +1,53 @@
+{
+  "_descricao": "Bloco execucao para calculo_atualizar sobre scripts/fixtures/calculo-liquidado-referencia.PJC (liquidado em 30/06/2016): pensão alimentícia de 30% a partir de 20/07/2016, custas da execução (atos do oficial de justiça e agravo de petição, auto de arrematação e armazenamento) e um pagamento que recolhe a pensão, atualização até 31/08/2016. Gabarito: o mesmo conjunto lançado à mão nas telas do PJe-Calc.",
+  "dataAtualizacao": "2016-08-31",
+  "cobrarEncargosIrpf": false,
+  "identificacao": "fl. 400",
+  "pensao": {
+    "dataEvento": "2016-07-20",
+    "aliquota": 30,
+    "incidirSobreJuros": true,
+    "folha": "FL. 322",
+    "verbas": "todas",
+    "fgts": true,
+    "multaFgts": true
+  },
+  "custas": {
+    "folha": "fl. 340",
+    "fixas": [
+      {
+        "vencimento": "2016-07-25",
+        "atosUrbanos": 2,
+        "agravosDePeticao": 1
+      }
+    ],
+    "autos": [
+      {
+        "tipo": "ARREMATACAO",
+        "vencimento": "2016-07-25",
+        "valor": 50000
+      }
+    ],
+    "armazenamentos": [
+      {
+        "inicio": "2016-07-01",
+        "fim": "2016-08-15",
+        "valor": 20000
+      }
+    ]
+  },
+  "pagamentos": [
+    {
+      "data": "2016-08-10",
+      "valor": 5000,
+      "folha": "FL. 360",
+      "priorizarJuros": false,
+      "credito": {
+        "principal": "apurar"
+      },
+      "recolher": {
+        "pensao": "apurar"
+      }
+    }
+  ]
+}

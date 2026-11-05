@@ -1,0 +1,199 @@
+{
+  "_descricao": "Caso de referência (A) com os ajustes que antes só se faziam na tela: ocorrências de FGTS (base e depositado por competência e em lote), ocorrências da contribuição social (bases dos salários devidos e pagos, 13º, contribuições recolhidas, por competência e em lote) e custas fixas, autos e armazenamento. Gabarito: o mesmo cálculo montado à mão na interface (exemplos/gabaritos-tela/H-ocorrencias-custas.PJC).",
+  "processo": {
+    "numero": "0001234-45.2015.5.08.0001",
+    "valorCausa": 50000,
+    "autuadoEm": "2015-06-10",
+    "reclamante": {
+      "nome": "Maria de Teste",
+      "cpf": "111.444.777-35"
+    },
+    "reclamado": {
+      "nome": "Empresa Teste Ltda",
+      "cnpj": "11.222.333/0001-81"
+    }
+  },
+  "calculo": {
+    "uf": "PA",
+    "municipio": "Belém",
+    "admissao": "2013-03-01",
+    "demissao": "2015-04-15",
+    "ajuizamento": "2015-06-10",
+    "maiorRemuneracao": 1700,
+    "ultimaRemuneracao": 1700,
+    "historicoUltimaRemuneracao": {
+      "criar": true,
+      "_motivo": "reproduz o cálculo de referência montado na tela, que criou o histórico automaticamente"
+    },
+    "comentarios": "Caso H: ocorrencias de FGTS e contribuicao social e custas fixas (mesmos dados do calculo montado na interface)."
+  },
+  "historicosSalariais": [
+    {
+      "nome": "SALÁRIO BASE",
+      "fgts": true,
+      "inss": true,
+      "valores": [
+        {
+          "de": "2013-03",
+          "ate": "2013-12",
+          "valor": 1500
+        },
+        {
+          "de": "2014-01",
+          "ate": "2014-12",
+          "valor": 1600
+        },
+        {
+          "de": "2015-01",
+          "ate": "2015-04",
+          "valor": 1700
+        }
+      ]
+    }
+  ],
+  "faltas": [
+    {
+      "inicio": "2014-03-10",
+      "fim": "2014-03-12",
+      "justificada": false
+    }
+  ],
+  "verbas": [
+    {
+      "verba": "13º SALÁRIO",
+      "base": {
+        "historicos": [
+          "SALÁRIO BASE"
+        ]
+      }
+    },
+    {
+      "verba": "AVISO PRÉVIO"
+    },
+    {
+      "verba": "FÉRIAS + 1/3"
+    },
+    {
+      "verba": "HORAS EXTRAS 50%",
+      "base": {
+        "historicos": [
+          "SALÁRIO BASE"
+        ]
+      },
+      "quantidade": 20,
+      "reflexos": [
+        "13º SALÁRIO SOBRE HORAS EXTRAS 50%",
+        "AVISO PRÉVIO SOBRE HORAS EXTRAS 50%",
+        "FÉRIAS + 1/3 SOBRE HORAS EXTRAS 50%",
+        "REPOUSO SEMANAL REMUNERADO E FERIADO SOBRE HORAS EXTRAS 50%"
+      ]
+    },
+    {
+      "verba": "MULTA DO ARTIGO 477 DA CLT"
+    },
+    {
+      "verba": "SALDO DE SALÁRIO",
+      "base": {
+        "historicos": [
+          "SALÁRIO BASE"
+        ]
+      }
+    }
+  ],
+  "fgts": {
+    "multa": true,
+    "percentualMulta": 40,
+    "ocorrencias": [
+      {
+        "competencia": "2014-03",
+        "base": 1234.56
+      },
+      {
+        "competencia": "2014-04",
+        "depositado": 50
+      },
+      {
+        "de": "2014-06",
+        "ate": "2014-08",
+        "depositado": 100
+      },
+      {
+        "de": "2015-01",
+        "ate": "2015-02",
+        "base": 1500
+      }
+    ]
+  },
+  "honorarios": [
+    {
+      "tipo": "SUCUMBENCIAIS",
+      "descricao": "Honorários advocatícios sucumbenciais",
+      "devedor": "RECLAMADO",
+      "credor": {
+        "nome": "Advogado de Teste",
+        "cpf": "529.982.247-25"
+      },
+      "percentual": 15,
+      "base": "BRUTO"
+    }
+  ],
+  "contribuicaoSocial": {
+    "apurarSobreSalariosPagos": true,
+    "ocorrencias": {
+      "salariosDevidos": [
+        {
+          "competencia": "2014-03",
+          "base": 999.99
+        },
+        {
+          "competencia": "2014-12",
+          "decimoTerceiro": true,
+          "base": 777
+        },
+        {
+          "de": "2015-01",
+          "ate": "2015-03",
+          "base": 1200
+        }
+      ],
+      "salariosPagos": [
+        {
+          "competencia": "2014-03",
+          "base": 1500,
+          "recolhidoSegurado": 111,
+          "recolhidoEmpresa": 222,
+          "recolhidoSat": 33,
+          "recolhidoTerceiros": 44
+        },
+        {
+          "de": "2014-09",
+          "ate": "2014-10",
+          "recolhidoSegurado": 150
+        }
+      ]
+    }
+  },
+  "custas": {
+    "fixas": {
+      "vencimento": "2016-05-10",
+      "atosUrbanos": 2,
+      "agravosDeInstrumento": 1,
+      "embargosExecucao": 1,
+      "recursoRevista": 1
+    },
+    "autos": [
+      {
+        "tipo": "ARREMATACAO",
+        "vencimento": "2016-05-10",
+        "valor": 20000
+      }
+    ],
+    "armazenamentos": [
+      {
+        "inicio": "2016-01-11",
+        "fim": "2016-03-10",
+        "valor": 5000
+      }
+    ]
+  }
+}

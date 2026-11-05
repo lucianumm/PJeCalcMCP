@@ -1,0 +1,24 @@
+name: Testes
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  offline:
+    name: Testes offline
+    runs-on: windows-latest
+    steps:
+      # os arquivos do repositório usam LF; sem isto o checkout no Windows converte para CRLF
+      - run: git config --global core.autocrlf false
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: Testes offline (sem PJe-Calc)
+        run: node scripts/test-mcp.mjs

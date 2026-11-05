@@ -1,0 +1,169 @@
+{
+  "processo": {
+    "numero": "0001234-45.2015.5.08.0001",
+    "valorCausa": 50000,
+    "autuadoEm": "2015-06-10",
+    "reclamante": {
+      "nome": "Maria de Teste",
+      "cpf": "111.444.777-35"
+    },
+    "reclamado": {
+      "nome": "Empresa Teste Ltda",
+      "cnpj": "11.222.333/0001-81"
+    }
+  },
+  "calculo": {
+    "uf": "PA",
+    "municipio": "Belém",
+    "admissao": "2013-03-01",
+    "demissao": "2015-04-15",
+    "ajuizamento": "2015-06-10",
+    "maiorRemuneracao": 1700,
+    "ultimaRemuneracao": 1700,
+    "historicoUltimaRemuneracao": {
+      "criar": true,
+      "_motivo": "reproduz o cálculo de referência montado na tela, que criou o histórico automaticamente"
+    },
+    "comentarios": "Calculo de referencia gerado pelo MCP (mesmos dados do calculo montado na interface)."
+  },
+  "historicosSalariais": [
+    {
+      "nome": "SALÁRIO BASE",
+      "fgts": true,
+      "inss": true,
+      "valores": [
+        {
+          "de": "2013-03",
+          "ate": "2013-12",
+          "valor": 1500
+        },
+        {
+          "de": "2014-01",
+          "ate": "2014-12",
+          "valor": 1600
+        },
+        {
+          "de": "2015-01",
+          "ate": "2015-04",
+          "valor": 1700
+        }
+      ]
+    }
+  ],
+  "faltas": [
+    {
+      "inicio": "2014-03-10",
+      "fim": "2014-03-12",
+      "justificada": false
+    }
+  ],
+  "verbas": [
+    {
+      "verba": "13º SALÁRIO",
+      "base": {
+        "historicos": [
+          "SALÁRIO BASE"
+        ]
+      }
+    },
+    {
+      "verba": "AVISO PRÉVIO"
+    },
+    {
+      "verba": "FÉRIAS + 1/3"
+    },
+    {
+      "verba": "HORAS EXTRAS 50%",
+      "base": {
+        "historicos": [
+          "SALÁRIO BASE"
+        ]
+      },
+      "quantidade": 20,
+      "reflexos": [
+        {
+          "nome": "13º SALÁRIO SOBRE HORAS EXTRAS 50%",
+          "valorPago": 5
+        },
+        "AVISO PRÉVIO SOBRE HORAS EXTRAS 50%",
+        "FÉRIAS + 1/3 SOBRE HORAS EXTRAS 50%",
+        {
+          "nome": "REPOUSO SEMANAL REMUNERADO E FERIADO SOBRE HORAS EXTRAS 50%",
+          "ocorrencias": [
+            {
+              "competencia": "2014-01",
+              "pago": 3
+            }
+          ]
+        }
+      ],
+      "ocorrencias": [
+        {
+          "competencia": "2013-03",
+          "pago": 20,
+          "_fonte": "holerite 03/2013"
+        },
+        {
+          "competencia": "2014-06",
+          "quantidade": 30
+        }
+      ]
+    },
+    {
+      "verba": "MULTA DO ARTIGO 477 DA CLT",
+      "comporPrincipal": false,
+      "incidencias": {
+        "inss": false,
+        "irpf": false,
+        "fgts": false
+      }
+    },
+    {
+      "verba": "SALDO DE SALÁRIO",
+      "base": {
+        "historicos": [
+          "SALÁRIO BASE"
+        ]
+      }
+    }
+  ],
+  "fgts": {
+    "multa": true,
+    "percentualMulta": 40,
+    "ocorrencias": [
+      {
+        "competencia": "2014-05",
+        "aliquota": 2,
+        "_motivo": "competência de contrato de aprendizagem (alíquota de 2% só nesse mês)"
+      }
+    ]
+  },
+  "honorarios": [
+    {
+      "tipo": "SUCUMBENCIAIS",
+      "descricao": "Honorários advocatícios sucumbenciais",
+      "devedor": "RECLAMADO",
+      "credor": {
+        "nome": "Advogado de Teste",
+        "cpf": "529.982.247-25"
+      },
+      "percentual": 15,
+      "base": "BRUTO"
+    },
+    {
+      "tipo": "PERICIAIS_CONTADOR",
+      "descricao": "Honorários periciais sobre a multa do art. 477",
+      "devedor": "RECLAMADO",
+      "credor": {
+        "nome": "Perito de Teste",
+        "cpf": "529.982.247-25"
+      },
+      "percentual": 10,
+      "base": "VERBAS_QUE_NAO_COMPOE_O_PRINCIPAL",
+      "verbas": [
+        "MULTA DO ARTIGO 477 DA CLT"
+      ]
+    }
+  ],
+  "_descricao": "Caso de referência com valores mês a mês nas ocorrências (pago de 03/2013 e quantidade de 06/2014 das horas extras; pago no reflexo de RSR em 01/2014), valor pago informado no reflexo de 13º, alíquota de 2% do FGTS só em 05/2014 (fgts.ocorrencias) e honorários periciais de 10% sobre a multa do art. 477 (verba que não compõe o principal)."
+}

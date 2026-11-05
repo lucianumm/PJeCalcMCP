@@ -1,0 +1,7 @@
+{
+  "_descricao": "Bloco execucao para calculo_atualizar sobre scripts/fixtures/calculo-liquidado-referencia.PJC (liquidado em 30/06/2016): atualização do precatório federal até 30/09/2026, com período de graça de 01/07/2025 a 31/12/2026 e a EC 136/2025 a partir de 01/08/2025, sem pagamentos. Gabarito: a mesma liquidação feita na tela do PJe-Calc.",
+  "dataAtualizacao": "2026-09-30",
+  "identificacao": "fl. 600",
+  "cobrarEncargosIrpf": false,
+  "precatorio": { "tipo": "PRECATORIO", "esfera": "FEDERAL", "periodoGraca": { "inicio": "2025-07-01", "fim": "2026-12-31" }, "ec136APartirDe": "2025-08-01" }
+}

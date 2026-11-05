@@ -1,0 +1,6 @@
+saida/
+java/classes/
+*.log
+node/
+scripts/fixtures/*-ATUALIZADO.PJC
+scripts/fixtures/*-EXECUCAO.PJC

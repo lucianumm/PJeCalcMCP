@@ -1,0 +1,99 @@
+{
+  "processo": {
+    "numero": "0001234-45.2015.5.08.0001",
+    "valorCausa": 50000,
+    "reclamante": {
+      "nome": "Maria de Teste Externo"
+    },
+    "reclamado": {
+      "nome": "Empresa Teste Ltda"
+    }
+  },
+  "dataBase": "2016-06-30",
+  "parametros": {
+    "indice": "IPCAE",
+    "juros": "TRD_SIMPLES",
+    "irpf": {
+      "meses": 28
+    }
+  },
+  "creditos": {
+    "verbasTributaveis": {
+      "valor": 10000,
+      "juros": 1000
+    },
+    "verbasNaoTributaveis": {
+      "valor": 5000,
+      "juros": 500
+    },
+    "fgts": {
+      "valor": 2000,
+      "juros": 100
+    },
+    "multaFgts": {
+      "valor": 800,
+      "juros": 40
+    },
+    "multasDevidasAoReclamante": [
+      {
+        "descricao": "Multa do art. 477 homologada",
+        "valor": 1700
+      }
+    ]
+  },
+  "descontos": {
+    "contribuicaoSocialSegurado": 1100,
+    "honorarios": [
+      {
+        "descricao": "Honorários contratuais",
+        "credor": "Advogado Contratado",
+        "cpf": "529.982.247-25",
+        "tipo": "CONTRATUAIS",
+        "valor": 1500
+      }
+    ]
+  },
+  "outrosDebitos": {
+    "contribuicaoSocialSegurado": {
+      "aposFev2009": {
+        "valor": 1100,
+        "juros": 200
+      }
+    },
+    "contribuicaoSocialPatronal": {
+      "aposFev2009": {
+        "valor": 2300,
+        "juros": 400
+      }
+    },
+    "custasConhecimento": {
+      "valor": 300,
+      "juros": 0
+    },
+    "honorarios": [
+      {
+        "descricao": "Honorários sucumbenciais",
+        "credor": "Advogado de Teste",
+        "cpf": "529.982.247-25",
+        "tipo": "SUCUMBENCIAIS",
+        "valor": 2400
+      }
+    ]
+  },
+  "execucao": {
+    "dataAtualizacao": "2016-08-31",
+    "identificacao": "externo MCP",
+    "cobrarEncargosIrpf": false,
+    "pagamentos": [
+      {
+        "data": "2016-07-20",
+        "valor": 5000,
+        "priorizarJuros": true,
+        "credito": {
+          "principal": "apurar"
+        }
+      }
+    ]
+  },
+  "_descricao": "Conta homologada feita fora do PJe-Calc (valores fictícios na data-base 30/06/2016) atualizada até 31/08/2016 com um pagamento."
+}
