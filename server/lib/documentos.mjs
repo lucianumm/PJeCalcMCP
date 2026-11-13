@@ -206,7 +206,7 @@ function salarioFixoFixadoPorTitulo(x) {
     }
   }
   const remuneracoes = lista(x.c.remuneracoes).filter((r) =>
-    semAcento(r.componente) === 'SALARIO_FIXO' &&
+    semAcento(r.componente) === 'SALARIO FIXO' &&
     docs.has(r.documento) &&
     categoriasDe(docs.get(r.documento)).includes('SENTENCA') &&
     decisoes.some((d) => d.documento === r.documento && semAcento(d.tipo) === 'SENTENCA')
