@@ -7,7 +7,7 @@ const base = () => ({
   calculo: { admissao: '2016-08-01', demissao: '2017-07-31' },
   historicosSalariais: [{ nome: 'SALARIO BASE', valores: [{ de: '2016-08', ate: '2017-07', valor: 937 }] }],
   contrato: {
-    processos: [{ id: 'PR0', numero: '0001690-13.2017.5.05.0161', relacao: 'PRINCIPAL', fase: 'LIQUIDACAO' }],
+    processos: [{ id: 'PR0', numero: '0000000-00.2020.5.00.0000', relacao: 'PRINCIPAL', fase: 'LIQUIDACAO' }],
     documentos: [
       { id: 'D1', tipo: 'SENTENCA' },
       { id: 'D4', tipo: 'HOLERITES', periodo: { inicio: '2017-06', fim: '2017-06' } },
