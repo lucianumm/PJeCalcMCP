@@ -54,13 +54,33 @@ export function comporTitulo(spec, { cenario = false } = {}) {
   const fase = cod(principal && principal.fase);
   const antesDoTransito = FASES_ANTES_DO_TRANSITO.includes(fase);
 
+  // A publicação pode faltar SOMENTE na sentença de origem quando a cadeia recursal posterior
+  // é completa, datada e transitada; não supre falta de data de acórdão ou ambiguidade recursal.
+  const raizSemPublicacaoDeterminavel = (d) => {
+    if (cod(d.tipo) !== 'SENTENCA' || d.recorrida || !iso(d.transito) || decs.length < 2) return false;
+    if (!decs.some((outra) => outra.recorrida === d.id)) return false;
+    return decs.every((outra) => {
+      if (outra.id === d.id) return true;
+      if (!iso(outra.publicacao || outra.data) || !outra.recorrida || outra.processo !== d.processo) return false;
+      const vistos = new Set([outra.id]);
+      let atual = outra;
+      while (atual.recorrida && porId.has(atual.recorrida)) {
+        atual = porId.get(atual.recorrida);
+        if (atual.id === d.id) return true;
+        if (vistos.has(atual.id)) return false;
+        vistos.add(atual.id);
+      }
+      return false;
+    });
+  };
+
   // 1. cada decisão bem registrada
   for (const d of decs) {
     const ctx = `decisão ${d.id}`;
     const tipo = cod(d.tipo);
     if (!INSTANCIAS.includes(cod(d.instancia))) reg(ctx, 'falha', `"instancia" ${d.instancia ? `"${d.instancia}" inválida` : 'não informada'} (${INSTANCIAS.join(', ')})`);
     if (!TIPOS_DECISAO.includes(tipo)) reg(ctx, 'falha', `"tipo" ${d.tipo ? `"${d.tipo}" inválido` : 'não informado'} (${TIPOS_DECISAO.join(', ')})`);
-    if (!iso(d.publicacao || d.data)) reg(ctx, 'falha', 'sem data de publicação ("publicacao"): a ordem da cadeia de decisões depende dela');
+    if (!iso(d.publicacao || d.data)) reg(ctx, raizSemPublicacaoDeterminavel(d) ? 'alerta' : 'falha', raizSemPublicacaoDeterminavel(d) ? 'sentença sem publicação individual: cadeia recursal posterior publicada, vinculada e transitada; não atribuir data fictícia' : 'sem data de publicação ("publicacao"): a ordem da cadeia de decisões depende dela');
     if (JULGAM_OUTRA.includes(tipo)) {
       if (!d.recorrida || !porId.has(d.recorrida)) reg(ctx, 'falha', `julga recurso ou embargos, mas "recorrida" ${d.recorrida ? `cita ${d.recorrida}, que não existe` : 'não foi informada'}`);
       if (!RESULTADOS.includes(cod(d.resultado))) reg(ctx, 'falha', `"resultado" ${d.resultado ? `"${d.resultado}" inválido` : 'não informado'} (${RESULTADOS.join(', ')})`);

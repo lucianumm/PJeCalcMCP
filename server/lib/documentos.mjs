@@ -192,6 +192,47 @@ function contexto(spec) {
   };
 }
 
+// Alternativas estritas: a fonte judicial substitui a prova de BASE, nunca a prova de pagamento.
+function salarioFixoFixadoPorTitulo(x) {
+  const historico = lista(x.s.historicosSalariais).find((h) => semAcento(h.nome) === 'SALARIO BASE');
+  if (!historico || !x.mesesSalario.length) return null;
+  const docs = new Map(lista(x.c.documentos).map((d) => [d.id, d]));
+  const decisoes = lista(x.c.decisoes);
+  const cobertos = new Map();
+  for (const f of lista(historico.valores)) {
+    for (const m of mesesEntre(f.de ?? f.competencia, f.ate ?? f.de ?? f.competencia)) {
+      if (cobertos.has(m) && cobertos.get(m) !== Number(f.valor)) return null;
+      cobertos.set(m, Number(f.valor));
+    }
+  }
+  const remuneracoes = lista(x.c.remuneracoes).filter((r) =>
+    semAcento(r.componente) === 'SALARIO_FIXO' &&
+    docs.has(r.documento) &&
+    categoriasDe(docs.get(r.documento)).includes('SENTENCA') &&
+    decisoes.some((d) => d.documento === r.documento && semAcento(d.tipo) === 'SENTENCA')
+  );
+  const atendidos = x.mesesSalario.every((m) => remuneracoes.some((r) =>
+    mesesEntre(r.de, r.ate || r.de).includes(m) &&
+    Number.isFinite(Number(r.valor)) && Number(r.valor) > 0 &&
+    cobertos.get(m) === Number(r.valor)
+  ));
+  return atendidos ? 'base SALARIO BASE integralmente fixada em sentença e reconciliada com contrato.remuneracoes; não comprova pagamentos mensais' : null;
+}
+
+// Sem eventos de gozo/pagamento afirmados, o período de férias é calculado pela regra nativa.
+function feriasNativasSemEventos(x) {
+  const c = x.c;
+  if (lista(c.afastamentos).some((a) => /FERIAS/.test(semAcento(a.tipo)))) return null;
+  if (lista(c.pagamentos).some((p) => /FERIAS/.test(semAcento([p.rubrica, p.verba, p.tipo, p.descricao].join(' '))))) return null;
+  if (lista(x.s.ferias && x.s.ferias.periodos).length || x.s.ferias?.gerar === false) return null;
+  const docs = new Map(lista(c.documentos).map((d) => [d.id, d]));
+  const deferida = lista(c.parcelas).some((p) =>
+    /FERIAS/.test(semAcento(p.rubrica)) && semAcento(p.situacao) === 'DEFERIDA' &&
+    lista(c.decisoes).some((d) => d.id === p.decisao && docs.has(d.documento) && categoriasDe(docs.get(d.documento)).includes('SENTENCA'))
+  );
+  return deferida ? 'férias deferidas por sentença; apuração nativa sem gozo ou pagamento individual afirmado (ausência de recibo não prova quitação)' : null;
+}
+
 // Matriz parcela -> documentos. "aceita": categorias que satisfazem; "cobertura": meses que os documentos
 // precisam cobrir; "alternativa": outra forma legítima de satisfazer (ex.: jornada fixada na decisão).
 export const REQUISITOS = [
@@ -199,9 +240,9 @@ export const REQUISITOS = [
   { id: 'DECISOES_POSTERIORES', descricao: 'Embargos de declaração, acórdãos e certidão de trânsito em julgado (ou a informação de que não houve recurso)', motivo: 'a decisão que vale é a última do processo', aceita: ['DECISOES_POSTERIORES'], quando: () => true },
   { id: 'REGISTRO', descricao: 'CTPS, ficha de registro ou TRCT', motivo: 'fixa as datas de admissão e saída e a função', aceita: ['REGISTRO', 'RESCISAO'], quando: () => true },
   { id: 'RESCISAO', descricao: 'TRCT com os valores pagos na rescisão', motivo: 'mostra o que já foi pago, para não cobrar duas vezes', aceita: ['RESCISAO'], quando: (x) => x.temRescisorias },
-  { id: 'SALARIOS', descricao: 'Holerites (ou ficha financeira) de todo o período das bases salariais', motivo: 'são as bases de cálculo mês a mês', aceita: ['SALARIOS'], cobertura: (x) => x.mesesSalario, quando: (x) => x.mesesSalario.length > 0 },
+  { id: 'SALARIOS', descricao: 'Holerites (ou ficha financeira) de todo o período das bases salariais', motivo: 'são as bases de cálculo mês a mês', aceita: ['SALARIOS'], cobertura: (x) => x.mesesSalario, alternativa: salarioFixoFixadoPorTitulo, quando: (x) => x.mesesSalario.length > 0 },
   { id: 'JORNADA', descricao: 'Cartões de ponto de todo o período das horas extras (ou a jornada fixada na decisão)', motivo: 'dão as quantidades de horas mês a mês', aceita: ['JORNADA'], cobertura: (x) => x.mesesJornada, alternativa: (x) => x.jornadaFixada && 'jornada ou quantidade fixada na decisão (premissa CONFIRMADA ligada à sentença/acórdão)', quando: (x) => x.temJornada },
-  { id: 'FERIAS', descricao: 'Avisos e recibos de férias de cada período aquisitivo', motivo: 'mostram os períodos gozados e pagos', aceita: ['FERIAS'], quando: (x) => x.temFerias && x.contratoMeses.length >= 12 },
+  { id: 'FERIAS', descricao: 'Avisos e recibos de férias de cada período aquisitivo', motivo: 'mostram os períodos gozados e pagos', aceita: ['FERIAS'], alternativa: feriasNativasSemEventos, quando: (x) => x.temFerias && x.contratoMeses.length >= 12 },
   { id: 'DECIMO', descricao: 'Recibos do 13º salário (ou holerites de novembro e dezembro)', motivo: 'mostram o que já foi pago de 13º', aceita: ['DECIMO', 'SALARIOS'], quando: (x) => x.tem13 },
   { id: 'FGTS', descricao: 'Extrato analítico do FGTS', motivo: 'mostra os depósitos feitos e a base da multa', aceita: ['FGTS'], quando: (x) => x.temFgts },
   { id: 'CCT', descricao: 'Convenção ou acordo coletivo da categoria, do período do contrato', motivo: 'pisos, adicionais e reajustes', aceita: ['CCT'], quando: (x) => x.temNormaColetiva },
