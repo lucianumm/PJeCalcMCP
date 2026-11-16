@@ -2,7 +2,7 @@
   "manifest_version": "0.3",
   "name": "pjecalc-mcp",
   "display_name": "PJe-Calc MCP",
-  "version": "2.16.0-mcp.18",
+  "version": "2.16.0-mcp.19",
   "description": "Monta, liquida, confere e atualiza cálculos trabalhistas no PJe-Calc Cidadão 2.16 instalado no seu computador, a partir da sentença e dos documentos do processo.",
   "long_description": "Conecta o Claude ao PJe-Calc Cidadão 2.16 instalado neste computador Windows. O assistente lê o processo, compõe o título a partir de todas as decisões, mostra um plano de interpretação para você aprovar e monta o cálculo no próprio PJe-Calc: verbas e reflexos, cartão de ponto, FGTS, contribuição social, imposto de renda, honorários, custas, correção e juros. Também atualiza o cálculo homologado na execução e confere tudo de forma independente, ao centavo. Requer o PJe-Calc Cidadão 2.16 extraído no computador. Os arquivos gerados ficam em DocumentosPJe-Calc MCP, ou na pasta que você escolher.",
   "author": {

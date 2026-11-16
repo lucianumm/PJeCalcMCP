@@ -192,6 +192,63 @@ function contexto(spec) {
   };
 }
 
+// Alternativas estritas: a fonte judicial substitui a prova da BASE, nunca a prova de pagamento.
+// Na dúvida, devolvem null e o pedido de documentos continua.
+const ehSentenca = (x, idDoc) => {
+  const doc = lista(x.c.documentos).find((d) => d.id === idDoc);
+  return Boolean(doc) && categoriasDe(doc).includes('SENTENCA');
+};
+
+/** Salário-base fixado na sentença, mês a mês igual ao histórico, e nenhuma outra base salarial no cálculo. */
+function salarioFixadoPorTitulo(x) {
+  const historicos = lista(x.s.historicosSalariais);
+  const base = historicos.filter((h) => semAcento(h.nome) === 'SALARIO BASE');
+  // outra base (comissões, adicionais, variáveis) ainda precisa de holerite
+  if (base.length !== 1 || historicos.length !== 1 || lista(base[0].ocorrencias).length || !x.mesesSalario.length) return null;
+  const porMes = new Map();
+  for (const f of lista(base[0].valores)) {
+    for (const m of mesesEntre(f.de ?? f.competencia, f.ate ?? f.de ?? f.competencia)) {
+      if (porMes.has(m) && porMes.get(m) !== Number(f.valor)) return null;
+      porMes.set(m, Number(f.valor));
+    }
+  }
+  const remuneracoes = lista(x.c.remuneracoes).filter((r) => semAcento(r.componente) === 'SALARIO FIXO' && ehSentenca(x, r.documento)
+    && lista(x.c.decisoes).some((d) => d.documento === r.documento && semAcento(d.tipo) === 'SENTENCA')
+    && Number.isFinite(Number(r.valor)) && Number(r.valor) > 0);
+  const fixados = x.mesesSalario.every((m) => remuneracoes.some((r) => mesesEntre(r.de, r.ate || r.de).includes(m) && porMes.get(m) === Number(r.valor)));
+  return fixados ? 'salário-base fixado na sentença e igual, mês a mês, ao histórico SALARIO BASE (contrato.remuneracoes); não comprova pagamentos mensais' : null;
+}
+
+/** Períodos aquisitivos completos do contrato, pelo mês (arredonda para mais: exige mais cobertura, não menos). */
+function periodosAquisitivos(x) {
+  const out = [];
+  for (let i = 0; i + 11 < x.contratoMeses.length; i += 12) out.push([x.contratoMeses[i], x.contratoMeses[i + 11]]);
+  return out;
+}
+
+/** Férias vencidas deferidas na sentença para todos os períodos aquisitivos, sem gozo nem pagamento declarado. */
+function feriasDeferidasSemEventos(x) {
+  const c = x.c;
+  const RE = /FERIAS/;
+  const parcFerias = new Set(lista(c.parcelas).filter((p) => RE.test(semAcento(p.rubrica))).map((p) => p.id));
+  if (lista(c.afastamentos).some((a) => RE.test(semAcento(a.tipo)))) return null;
+  if (lista(c.pagamentos).some((p) => RE.test(semAcento([p.titulo, p.rubrica, p.verba, p.tipo, p.descricao].join(' ')))
+    || lista(p.parcelas).some((id) => parcFerias.has(id)))) return null;
+  if (lista(x.s.ferias && x.s.ferias.periodos).length || (x.s.ferias && x.s.ferias.gerar === false)) return null;
+  const decisoes = lista(c.decisoes);
+  const reformada = (p) => decisoes.some((d) => d.id !== p.decisao && lista(d.capitulos).some((k) => k.parcela === p.id && /REFORMA|EXCLUI|INDEFERE|ANULA/.test(semAcento(k.efeito))));
+  // só férias vencidas (não as proporcionais), com o período declarado, deferidas na sentença e não reformadas
+  const deferidas = lista(c.parcelas).filter((p) => RE.test(semAcento(p.rubrica)) && !/PROPORC/.test(semAcento(p.rubrica))
+    && semAcento(p.situacao) === 'DEFERIDA' && p.periodo && mes(p.periodo.inicio) && mes(p.periodo.fim)
+    && decisoes.some((d) => d.id === p.decisao && semAcento(d.tipo) === 'SENTENCA' && ehSentenca(x, d.documento))
+    && !reformada(p));
+  const periodos = periodosAquisitivos(x);
+  const cobertos = periodos.every(([ini, fim]) => deferidas.some((p) => mes(p.periodo.inicio) <= ini && mes(p.periodo.fim) >= fim));
+  return periodos.length && cobertos
+    ? `férias de ${periodos.length} período(s) aquisitivo(s) deferidas na sentença (${deferidas.map((p) => p.id).join(', ')}), sem gozo nem pagamento declarado`
+    : null;
+}
+
 // Matriz parcela -> documentos. "aceita": categorias que satisfazem; "cobertura": meses que os documentos
 // precisam cobrir; "alternativa": outra forma legítima de satisfazer (ex.: jornada fixada na decisão).
 export const REQUISITOS = [
@@ -199,9 +256,9 @@ export const REQUISITOS = [
   { id: 'DECISOES_POSTERIORES', descricao: 'Embargos de declaração, acórdãos e certidão de trânsito em julgado (ou a informação de que não houve recurso)', motivo: 'a decisão que vale é a última do processo', aceita: ['DECISOES_POSTERIORES'], quando: () => true },
   { id: 'REGISTRO', descricao: 'CTPS, ficha de registro ou TRCT', motivo: 'fixa as datas de admissão e saída e a função', aceita: ['REGISTRO', 'RESCISAO'], quando: () => true },
   { id: 'RESCISAO', descricao: 'TRCT com os valores pagos na rescisão', motivo: 'mostra o que já foi pago, para não cobrar duas vezes', aceita: ['RESCISAO'], quando: (x) => x.temRescisorias },
-  { id: 'SALARIOS', descricao: 'Holerites (ou ficha financeira) de todo o período das bases salariais', motivo: 'são as bases de cálculo mês a mês', aceita: ['SALARIOS'], cobertura: (x) => x.mesesSalario, quando: (x) => x.mesesSalario.length > 0 },
+  { id: 'SALARIOS', descricao: 'Holerites (ou ficha financeira) de todo o período das bases salariais', motivo: 'são as bases de cálculo mês a mês', aceita: ['SALARIOS'], cobertura: (x) => x.mesesSalario, alternativa: salarioFixadoPorTitulo, quando: (x) => x.mesesSalario.length > 0 },
   { id: 'JORNADA', descricao: 'Cartões de ponto de todo o período das horas extras (ou a jornada fixada na decisão)', motivo: 'dão as quantidades de horas mês a mês', aceita: ['JORNADA'], cobertura: (x) => x.mesesJornada, alternativa: (x) => x.jornadaFixada && 'jornada ou quantidade fixada na decisão (premissa CONFIRMADA ligada à sentença/acórdão)', quando: (x) => x.temJornada },
-  { id: 'FERIAS', descricao: 'Avisos e recibos de férias de cada período aquisitivo', motivo: 'mostram os períodos gozados e pagos', aceita: ['FERIAS'], quando: (x) => x.temFerias && x.contratoMeses.length >= 12 },
+  { id: 'FERIAS', descricao: 'Avisos e recibos de férias de cada período aquisitivo', motivo: 'mostram os períodos gozados e pagos', aceita: ['FERIAS'], alternativa: feriasDeferidasSemEventos, quando: (x) => x.temFerias && x.contratoMeses.length >= 12 },
   { id: 'DECIMO', descricao: 'Recibos do 13º salário (ou holerites de novembro e dezembro)', motivo: 'mostram o que já foi pago de 13º', aceita: ['DECIMO', 'SALARIOS'], quando: (x) => x.tem13 },
   { id: 'FGTS', descricao: 'Extrato analítico do FGTS', motivo: 'mostra os depósitos feitos e a base da multa', aceita: ['FGTS'], quando: (x) => x.temFgts },
   { id: 'CCT', descricao: 'Convenção ou acordo coletivo da categoria, do período do contrato', motivo: 'pisos, adicionais e reajustes', aceita: ['CCT'], quando: (x) => x.temNormaColetiva },

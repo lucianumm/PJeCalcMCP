@@ -25,9 +25,9 @@ se não vier. Repita até `completa: true`.
 | `DECISOES_POSTERIORES` | sempre | embargos, acórdãos, certidão de trânsito | sem recurso: certidão ou registro `INEXISTENTE` com fundamento |
 | `REGISTRO` | sempre | CTPS, ficha de registro, contrato, TRCT | datas e função |
 | `RESCISAO` | saída + verbas rescisórias | TRCT | o que foi pago na rescisão |
-| `SALARIOS` | históricos salariais | holerites, ficha financeira | **cobertura mês a mês** de todas as bases |
+| `SALARIOS` | históricos salariais | holerites, ficha financeira | **cobertura mês a mês** de todas as bases; ou, se a única base é `SALARIO BASE`, o salário fixado na sentença (`contrato.remuneracoes` `SALARIO_FIXO` ligado à sentença, igual ao histórico em todos os meses), o que não comprova pagamentos |
 | `JORNADA` | horas extras, noturno, intervalos, cartão | cartões de ponto | cobertura mês a mês do período; ou jornada fixada na decisão (premissa `CONFIRMADA` ligada à sentença/acórdão) |
-| `FERIAS` | férias deferidas e contrato ≥ 12 meses | avisos e recibos de férias | períodos gozados e pagos |
+| `FERIAS` | férias deferidas e contrato ≥ 12 meses | avisos e recibos de férias | períodos gozados e pagos; ou férias vencidas deferidas na sentença, não reformadas, com `periodo` na parcela cobrindo todos os períodos aquisitivos e sem gozo (`afastamentos`) nem pagamento de férias declarado |
 | `DECIMO` | 13º deferido | recibos de 13º, holerites | o que já foi pago |
 | `FGTS` | FGTS deferido | extrato analítico, guias | depósitos e base da multa |
 | `CCT` | piso, norma coletiva, PLR, reajuste | convenção ou acordo coletivo | do período do contrato |

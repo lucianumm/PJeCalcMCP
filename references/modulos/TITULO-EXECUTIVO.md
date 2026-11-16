@@ -80,7 +80,9 @@ Ela entra no plano de interpretação.
 
 A auditoria acusa:
 - capítulo sem decisão;
-- decisão sem instância, tipo, data de publicação, recorrida ou resultado;
+- decisão sem instância, tipo, data de publicação, recorrida ou resultado (a sentença de origem sem
+  data de publicação vira alerta quando transitou e todas as decisões seguintes estão datadas, no
+  mesmo processo e ligadas a ela por `recorrida`; não atribua data fictícia);
 - reforma por recurso não conhecido;
 - capítulo anulado sem nova decisão;
 - recurso julgado sem a decisão de julgamento;

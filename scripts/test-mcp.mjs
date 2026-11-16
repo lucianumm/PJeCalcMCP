@@ -1091,6 +1091,60 @@ try {
       'eventos: afastamento, admissão e demissão com data exata; data desconhecida não vira dia inventado');
   }
 
+  console.log('22) salário e férias fixados na sentença; sentença sem data de publicação com cadeia datada');
+  {
+    const { avaliarDocumentacao } = await import('../server/lib/documentos.mjs');
+    const { comporTitulo } = await import('../server/lib/titulo.mjs');
+    const caso = () => ({
+      calculo: { admissao: '2016-08-01', demissao: '2017-07-31' },
+      historicosSalariais: [{ nome: 'SALARIO BASE', valores: [{ de: '2016-08', ate: '2017-07', valor: 937 }] }],
+      contrato: {
+        processos: [{ id: 'PR0', numero: '0000000-00.2020.5.00.0000', relacao: 'PRINCIPAL', fase: 'LIQUIDACAO' }],
+        documentos: [{ id: 'D1', tipo: 'SENTENCA' }, { id: 'D4', tipo: 'HOLERITES', periodo: { inicio: '2017-06', fim: '2017-06' } }, { id: 'D6', tipo: 'ACORDAO_TRT' }],
+        remuneracoes: [{ id: 'R1', componente: 'SALARIO_FIXO', documento: 'D1', de: '2016-08', ate: '2017-07', valor: 937 }],
+        parcelas: [{ id: 'P4', rubrica: 'FÉRIAS + 1/3', situacao: 'DEFERIDA', decisao: 'DEC1', periodo: { inicio: '2016-08-01', fim: '2017-07-31' } }],
+        decisoes: [
+          { id: 'DEC1', documento: 'D1', tipo: 'SENTENCA', instancia: 'VARA', transito: '2026-10-22', processo: 'PR0', capitulos: [{ parcela: 'P4', efeito: 'DEFERE' }] },
+          { id: 'DEC2', documento: 'D6', tipo: 'ACORDAO', instancia: 'TRT_TURMA', recorrida: 'DEC1', resultado: 'DESPROVIDO', processo: 'PR0', publicacao: '2019-02-19', transito: '2026-10-22', capitulos: [{ parcela: 'P4', efeito: 'MANTEM' }] },
+        ],
+      },
+    });
+    const req = (s, id) => avaliarDocumentacao(s).requisitos.find((r) => r.id === id);
+    const pub = (s, id = 'DEC1') => comporTitulo(s).verificacoes.filter((v) => v.item === `decisão ${id}` && /publicação/.test(v.detalhe));
+    const com = (f) => { const s = caso(); f(s); return s; };
+    const ok = caso();
+    verificar(req(ok, 'SALARIOS').status === 'ok' && /não comprova pagamentos/.test(req(ok, 'SALARIOS').detalhe) && req(ok, 'FERIAS').status === 'ok'
+      && pub(ok).length === 1 && pub(ok)[0].estado === 'alerta',
+      'salário-base e férias fixados na sentença dispensam holerites e recibos; sentença sem data com a cadeia datada é alerta');
+    const salario = {
+      'valor diferente do histórico': (s) => { s.historicosSalariais[0].valores[0].valor = 936; },
+      'remuneração tirada de holerite': (s) => { s.contrato.remuneracoes[0].documento = 'D4'; },
+      'outra base salarial (comissões)': (s) => { s.historicosSalariais.push({ nome: 'COMISSOES', valores: [{ de: '2016-08', ate: '2017-07', valor: 1500 }] }); },
+      'mês do histórico sem valor na sentença': (s) => { s.contrato.remuneracoes[0].ate = '2017-06'; },
+    };
+    const salarioFalhou = Object.entries(salario).filter(([, f]) => req(com(f), 'SALARIOS').status === 'ok').map(([k]) => k);
+    verificar(!salarioFalhou.length, `salário: holerites continuam exigidos sem fixação integral na sentença${salarioFalhou.length ? `; passou indevidamente: ${salarioFalhou.join(', ')}` : ''}`);
+    const ferias = {
+      'gozo declarado': (s) => { s.contrato.afastamentos = [{ id: 'A1', tipo: 'FERIAS', inicio: '2017-02-01', fim: '2017-02-10' }]; },
+      'pagamento pela rubrica': (s) => { s.contrato.pagamentos = [{ id: 'PG1', rubrica: 'FÉRIAS + 1/3', valor: 937 }]; },
+      'pagamento pelo título': (s) => { s.contrato.pagamentos = [{ id: 'PG1', titulo: 'TRCT: férias', valor: 937 }]; },
+      'pagamento ligado à parcela': (s) => { s.contrato.pagamentos = [{ id: 'PG1', titulo: 'TRCT', parcelas: ['P4'], valor: 937 }]; },
+      'só proporcionais deferidas': (s) => { s.contrato.parcelas[0].rubrica = 'FÉRIAS PROPORCIONAIS + 1/3'; },
+      'parcela sem período': (s) => { delete s.contrato.parcelas[0].periodo; },
+      'período deferido menor que o aquisitivo': (s) => { s.contrato.parcelas[0].periodo.fim = '2017-05-31'; },
+      'segundo período aquisitivo sem deferimento': (s) => { s.calculo.demissao = '2018-08-31'; },
+      'excluída no acórdão': (s) => { s.contrato.decisoes[1].resultado = 'PROVIDO'; s.contrato.decisoes[1].capitulos[0].efeito = 'EXCLUI'; },
+      'deferida fora da sentença': (s) => { s.contrato.parcelas[0].decisao = 'DEC2'; },
+    };
+    const feriasFalhou = Object.entries(ferias).filter(([, f]) => req(com(f), 'FERIAS').status === 'ok').map(([k]) => k);
+    verificar(!feriasFalhou.length, `férias: avisos e recibos continuam exigidos fora do caso estrito${feriasFalhou.length ? `; passou indevidamente: ${feriasFalhou.join(', ')}` : ''}`);
+    const semTransito = com((s) => { delete s.contrato.decisoes[0].transito; });
+    const acordaoSemData = com((s) => { delete s.contrato.decisoes[1].publicacao; });
+    const outroProcesso = com((s) => { s.contrato.decisoes[1].processo = 'PR9'; });
+    verificar(pub(semTransito)[0].estado === 'falha' && pub(acordaoSemData)[0].estado === 'falha' && pub(acordaoSemData, 'DEC2')[0].estado === 'falha' && pub(outroProcesso)[0].estado === 'falha',
+      'sentença sem data continua falha sem trânsito, com acórdão sem data ou com a cadeia em outro processo');
+  }
+
   console.log('\nTODOS OS TESTES OFFLINE PASSARAM');
 } catch (e) {
   console.error(`\n${e.message}`);

@@ -12,7 +12,7 @@ description: >-
   calculo_*, catalogo_*, tabelas_*, pjecalc_*, rest_*, db_*, config_*.
 license: AGPL-3.0
 metadata:
-  version: 2.16.0-mcp.18
+  version: 2.16.0-mcp.19
 ---
 
 # PJe-Calc MCP (skill)
