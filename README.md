@@ -13,6 +13,7 @@
 [![Licença AGPL-3.0](https://img.shields.io/badge/licença-AGPL--3.0-blue?style=flat-square)](LICENSE)
 [![Testes offline](https://github.com/lucianumm/PJeCalcMCP/actions/workflows/testes.yml/badge.svg?branch=main)](https://github.com/lucianumm/PJeCalcMCP/actions/workflows/testes.yml)
 [![M8ven Verified](https://m8ven.ai/badge/mcp/lucianumm-pjecalcmcp-1cfx2t?variant=verified&v=618183f0f048598293b917a908f18657)](https://m8ven.ai/mcp/lucianumm-pjecalcmcp-1cfx2t?s=readme)
+[![lucianumm/PJeCalcMCP MCP server](https://glama.ai/mcp/servers/lucianumm/PJeCalcMCP/badges/score.svg)](https://glama.ai/mcp/servers/lucianumm/PJeCalcMCP)
 
 Conecta assistentes de inteligência artificial **instalados no seu computador** — Claude Desktop,
 Claude Code, Codex, Cursor, VS Code e outros — ao **PJe-Calc Cidadão**, o programa oficial de cálculos
