@@ -1,4 +1,7 @@
 // pjecalc-mcp-skill · lib/leitura.mjs
+// SPDX-License-Identifier: PolyForm-Noncommercial-1.0.0
+// Required Notice: Copyright (C) 2026 Lucianum (https://github.com/lucianumm)
+// Uso comercial exige licença do titular: veja LICENSE e LICENCA-COMERCIAL.md.
 // Leitura integral registrada no contrato (Parte A): cada documento listado em contrato.documentos precisa ter
 // todas as folhas classificadas (usadas, irrelevantes com motivo, ilegíveis com pedido de nova cópia), e as
 // conferências da leitura ficam registradas: fechamentos (holerite, cartão, TRCT, extrato), confrontos entre

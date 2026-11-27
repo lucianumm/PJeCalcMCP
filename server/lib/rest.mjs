@@ -1,4 +1,7 @@
 // pjecalc-mcp-skill · lib/rest.mjs
+// SPDX-License-Identifier: PolyForm-Noncommercial-1.0.0
+// Required Notice: Copyright (C) 2026 Lucianum (https://github.com/lucianumm)
+// Uso comercial exige licença do titular: veja LICENSE e LICENCA-COMERCIAL.md.
 // Cliente HTTP para os serviços REST do PJe-Calc (RESTEasy/Seam).
 
 import http from 'node:http';

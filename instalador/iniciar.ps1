@@ -1,4 +1,7 @@
 # PJe-Calc MCP - garante o Node.js (20+) e chama o instalador.
+# SPDX-License-Identifier: PolyForm-Noncommercial-1.0.0
+# Required Notice: Copyright (C) 2026 Lucianum (https://github.com/lucianumm)
+# Uso comercial exige licença do titular: veja LICENSE e LICENCA-COMERCIAL.md.
 # Usado pelos arquivos .bat da pasta principal. Uso: iniciar.ps1 instalar|conferir|desinstalar
 param([string]$Modo = 'instalar')
 $ErrorActionPreference = 'Stop'

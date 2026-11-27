@@ -1,4 +1,7 @@
 // pjecalc-mcp-skill · lib/auditoria.mjs
+// SPDX-License-Identifier: PolyForm-Noncommercial-1.0.0
+// Required Notice: Copyright (C) 2026 Lucianum (https://github.com/lucianumm)
+// Uso comercial exige licença do titular: veja LICENSE e LICENCA-COMERCIAL.md.
 // Auditoria separada da validação técnica. A validação técnica (gerador) diz se o PJe-Calc aceita a
 // especificação; a auditoria confere se cada parâmetro tem origem na prova e nas decisões do processo
 // (contrato de dados), procura incoerências conhecidas e confere os números que o PJe-Calc produziu.

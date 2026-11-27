@@ -1,4 +1,7 @@
 // pjecalc-mcp-skill · lib/h2.mjs
+// SPDX-License-Identifier: PolyForm-Noncommercial-1.0.0
+// Required Notice: Copyright (C) 2026 Lucianum (https://github.com/lucianumm)
+// Uso comercial exige licença do titular: veja LICENSE e LICENCA-COMERCIAL.md.
 // Acesso ao banco H2 embutido (.dados/pjecalc.h2.db) usando a JRE do próprio PJe-Calc
 // e o driver org.h2.Driver (h2-1.3.154.jar) de bin/lib. Nenhuma dependência externa.
 //

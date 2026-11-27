@@ -1,4 +1,7 @@
 // pjecalc-mcp-skill · lib/titulo.mjs
+// SPDX-License-Identifier: PolyForm-Noncommercial-1.0.0
+// Required Notice: Copyright (C) 2026 Lucianum (https://github.com/lucianumm)
+// Uso comercial exige licença do titular: veja LICENSE e LICENCA-COMERCIAL.md.
 // Composição do título executivo a partir de TODAS as decisões (vara, TRT, TST, STF, liquidação e
 // execução), capítulo por capítulo (parcela ou critério), com as regras:
 //   - o julgamento do recurso substitui a decisão recorrida no que foi objeto do recurso;

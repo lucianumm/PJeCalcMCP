@@ -1,4 +1,7 @@
 // pjecalc-mcp-skill · lib/recalculo.mjs
+// SPDX-License-Identifier: PolyForm-Noncommercial-1.0.0
+// Required Notice: Copyright (C) 2026 Lucianum (https://github.com/lucianumm)
+// Uso comercial exige licença do titular: veja LICENSE e LICENCA-COMERCIAL.md.
 // Conferência independente das contas do PJe-Calc a partir do .PJC liquidado (exportado do aplicativo).
 //
 // Cada ocorrência exportada traz o índice de correção e a taxa de juros que o PJe-Calc usou; com eles toda a

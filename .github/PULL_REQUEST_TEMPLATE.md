@@ -12,4 +12,4 @@ Para regras de cálculo, informe a origem do resultado esperado e o caso de regr
 
 - [ ] Revisei o diff e removi dados pessoais, documentos reais de processos, credenciais e arquivos gerados.
 - [ ] Atualizei a documentação, os exemplos ou o contrato de dados quando a mudança os afeta.
-- [ ] Li o CONTRIBUTING.md e a alteração segue a licença do projeto.
+- [ ] Li o CONTRIBUTING.md, a alteração segue a licença do projeto e concedo ao titular os direitos sobre a contribuição descritos lá (inclusive o relicenciamento comercial).

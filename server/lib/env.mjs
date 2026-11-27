@@ -1,4 +1,7 @@
 // pjecalc-mcp-skill · lib/env.mjs
+// SPDX-License-Identifier: PolyForm-Noncommercial-1.0.0
+// Required Notice: Copyright (C) 2026 Lucianum (https://github.com/lucianumm)
+// Uso comercial exige licença do titular: veja LICENSE e LICENCA-COMERCIAL.md.
 // Descoberta de caminhos e leitura/escrita de configuração do PJe-Calc.
 // Todos os arquivos de configuração do PJe-Calc são ISO-8859-1; lemos/gravamos em latin1.
 

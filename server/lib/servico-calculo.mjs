@@ -1,4 +1,7 @@
 // pjecalc-mcp-skill · lib/servico-calculo.mjs
+// SPDX-License-Identifier: PolyForm-Noncommercial-1.0.0
+// Required Notice: Copyright (C) 2026 Lucianum (https://github.com/lucianumm)
+// Uso comercial exige licença do titular: veja LICENSE e LICENCA-COMERCIAL.md.
 // Fluxos completos de cálculo usados pelas ferramentas do MCP:
 //
 //   validar   -> confere a especificação sem gerar nada (mesmas regras do gerador)

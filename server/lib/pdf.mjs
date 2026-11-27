@@ -1,4 +1,7 @@
 // pjecalc-mcp-skill · lib/pdf.mjs
+// SPDX-License-Identifier: PolyForm-Noncommercial-1.0.0
+// Required Notice: Copyright (C) 2026 Lucianum (https://github.com/lucianumm)
+// Uso comercial exige licença do titular: veja LICENSE e LICENCA-COMERCIAL.md.
 // Leitor de PDF sem dependências: páginas, texto por página (quando o PDF tem texto) e imagens por página.
 // Serve para o inventário dos documentos e para localizar trechos; NÃO substitui a leitura: página sem texto
 // (escaneada) é marcada para ser vista como imagem, e o texto extraído de PDF com fontes sem mapa de caracteres

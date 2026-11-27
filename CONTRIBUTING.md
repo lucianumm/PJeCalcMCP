@@ -73,5 +73,9 @@ A geração e a importação de cálculos devem continuar usando `.PJC` e as ope
 não grave cálculos diretamente no banco H2. Mantenha as conferências e a rastreabilidade entre
 documentos, decisões e parâmetros.
 
-As contribuições de código seguem a [AGPL-3.0-only](LICENSE), e a participação segue o
-[código de conduta](CODE_OF_CONDUCT.md).
+O projeto é distribuído sob a [PolyForm Noncommercial License 1.0.0](LICENSE) e licenciado
+comercialmente pelo titular ([LICENCA-COMERCIAL.md](LICENCA-COMERCIAL.md)). Ao enviar uma contribuição,
+você declara que ela é obra sua e concede ao titular licença perpétua, mundial, gratuita e irrevogável
+para usar, modificar, sublicenciar e relicenciar a contribuição, inclusive sob licença comercial.
+Mantenha o cabeçalho `SPDX-License-Identifier` e a linha `Required Notice:` nos arquivos novos. A
+participação segue o [código de conduta](CODE_OF_CONDUCT.md).

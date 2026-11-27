@@ -1,4 +1,7 @@
 // pjecalc-mcp-skill · scripts/cliente-mcp.mjs
+// SPDX-License-Identifier: PolyForm-Noncommercial-1.0.0
+// Required Notice: Copyright (C) 2026 Lucianum (https://github.com/lucianumm)
+// Uso comercial exige licença do titular: veja LICENSE e LICENCA-COMERCIAL.md.
 // Cliente MCP mínimo (JSON-RPC sobre stdio) usado pelos testes: sobe o servidor como os agentes
 // fazem (node server/server.mjs) e conversa pelo mesmo protocolo.
 

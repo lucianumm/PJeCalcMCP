@@ -1,4 +1,7 @@
 // pjecalc-mcp-skill · lib/localizar.mjs
+// SPDX-License-Identifier: PolyForm-Noncommercial-1.0.0
+// Required Notice: Copyright (C) 2026 Lucianum (https://github.com/lucianumm)
+// Uso comercial exige licença do titular: veja LICENSE e LICENCA-COMERCIAL.md.
 // Encontra a instalação do PJe-Calc no computador, sem o usuário precisar configurar nada.
 //
 // Ordem (para no primeiro que der certo):

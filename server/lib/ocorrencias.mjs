@@ -1,4 +1,7 @@
 // pjecalc-mcp-skill · lib/ocorrencias.mjs
+// SPDX-License-Identifier: PolyForm-Noncommercial-1.0.0
+// Required Notice: Copyright (C) 2026 Lucianum (https://github.com/lucianumm)
+// Uso comercial exige licença do titular: veja LICENSE e LICENCA-COMERCIAL.md.
 // Valores mês a mês nas ocorrências das verbas (pago dos contracheques, quantidade apurada, devido informado...).
 //
 // As ocorrências só existem depois que o PJe-Calc regera as verbas. Cada ocorrência exportada traz uma cópia

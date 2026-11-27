@@ -10,7 +10,7 @@
 [![Windows](https://img.shields.io/badge/plataforma-Windows-0078D4?style=flat-square)](#o-que-você-precisa)
 [![PJe-Calc 2.16](https://img.shields.io/badge/PJe--Calc-2.16-005A9C?style=flat-square)](#como-funciona-em-poucas-palavras)
 [![Idioma pt-BR](https://img.shields.io/badge/idioma-pt--BR-009C3B?style=flat-square)](#como-usar)
-[![Licença AGPL-3.0](https://img.shields.io/badge/licença-AGPL--3.0-blue?style=flat-square)](LICENSE)
+[![Licença PolyForm Noncommercial 1.0.0](https://img.shields.io/badge/licença-PolyForm%20Noncommercial%201.0.0-orange?style=flat-square)](LICENSE)
 [![Testes offline](https://github.com/lucianumm/PJeCalcMCP/actions/workflows/testes.yml/badge.svg?branch=main)](https://github.com/lucianumm/PJeCalcMCP/actions/workflows/testes.yml)
 [![M8ven Verified](https://m8ven.ai/badge/mcp/lucianumm-pjecalcmcp-1cfx2t?variant=verified&v=618183f0f048598293b917a908f18657)](https://m8ven.ai/mcp/lucianumm-pjecalcmcp-1cfx2t?s=readme)
 [![lucianumm/PJeCalcMCP MCP server](https://glama.ai/mcp/servers/lucianumm/PJeCalcMCP/badges/score.svg)](https://glama.ai/mcp/servers/lucianumm/PJeCalcMCP)
@@ -457,6 +457,11 @@ repositório e deve ser baixado no site oficial.
 
 Copyright (C) 2026 Lucianum.
 
-Distribuído sob a [GNU Affero General Public License v3.0](LICENSE) (AGPL-3.0). Você pode usar,
-estudar, modificar e redistribuir livremente. Quem distribuir uma versão modificada, ou oferecê-la
-como serviço pela rede, deve publicar o código-fonte sob a mesma licença.
+Distribuído sob a [PolyForm Noncommercial License 1.0.0](LICENSE): **público para uso não
+comercial**. Estudo, pesquisa, ensino, órgãos públicos e entidades beneficentes podem usar, modificar
+e redistribuir sem custo, mantendo a licença e os avisos `Required Notice:`.
+
+**Uso comercial exige licença do titular.** É proibido vender, revender ou cobrar pelo acesso ao
+software, e é preciso contratar licença comercial para usá-lo em atividade profissional remunerada,
+oferecê-lo como serviço ou integrá-lo a produtos, sistemas ou plataformas comerciais. Veja
+[LICENCA-COMERCIAL.md](LICENCA-COMERCIAL.md) para os casos e o contato.

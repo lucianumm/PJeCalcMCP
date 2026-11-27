@@ -1,4 +1,7 @@
 // pjecalc-mcp-skill · lib/esquema.mjs
+// SPDX-License-Identifier: PolyForm-Noncommercial-1.0.0
+// Required Notice: Copyright (C) 2026 Lucianum (https://github.com/lucianumm)
+// Uso comercial exige licença do titular: veja LICENSE e LICENCA-COMERCIAL.md.
 // Campos aceitos em cada bloco da especificação. O gerador recusa qualquer campo fora desta lista
 // (nada é ignorado em silêncio). Campos iniciados por "_" são anotações livres (ex.: "_fonte",
 // "_premissa", "_folha") e não entram no cálculo.

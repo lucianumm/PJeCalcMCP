@@ -1,4 +1,7 @@
 // pjecalc-mcp-skill · lib/validacao.mjs
+// SPDX-License-Identifier: PolyForm-Noncommercial-1.0.0
+// Required Notice: Copyright (C) 2026 Lucianum (https://github.com/lucianumm)
+// Uso comercial exige licença do titular: veja LICENSE e LICENCA-COMERCIAL.md.
 // As regras de "Pendências do Cálculo" do PJe-Calc 2.16, reproduzidas sobre a árvore do .PJC.
 //
 // Momento "especificacao": a árvore gerada pelo MCP, antes de importar (as ocorrências ainda não existem).

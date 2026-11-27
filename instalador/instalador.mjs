@@ -1,4 +1,7 @@
 // pjecalc-mcp-skill · instalador/instalador.mjs
+// SPDX-License-Identifier: PolyForm-Noncommercial-1.0.0
+// Required Notice: Copyright (C) 2026 Lucianum (https://github.com/lucianumm)
+// Uso comercial exige licença do titular: veja LICENSE e LICENCA-COMERCIAL.md.
 // Instalação, conferência e desinstalação para quem não é técnico. Chamado pelos arquivos .bat da
 // raiz (que garantem o Node.js). Uso: node instalador.mjs instalar|conferir|desinstalar [--sim]
 //   --sim: responde "sim" a tudo (testes). As pastas dos agentes seguem APPDATA/LOCALAPPDATA/USERPROFILE.
@@ -17,6 +20,7 @@ const NODE = process.execPath;
 const modo = process.argv[2] || 'instalar';
 const SIM = process.argv.includes('--sim');
 const loc = await import(pathToFileURL(path.join(RAIZ, 'server', 'lib', 'localizar.mjs')).href);
+const { LICENCA } = await import(pathToFileURL(path.join(RAIZ, 'server', 'lib', 'licenca.mjs')).href);
 
 const rl = SIM ? null : readline.createInterface({ input: process.stdin, output: process.stdout });
 const perguntar = (q) => (SIM ? Promise.resolve('') : new Promise((r) => rl.question(q, (x) => r(x.trim()))));
@@ -195,9 +199,25 @@ async function passoTeste() {
   } finally { c.fechar(); }
 }
 
+// a instalação só continua com o aceite expresso da licença (Enter sozinho não aceita)
+async function aceitarLicenca() {
+  titulo('Licença');
+  console.log(`  ${LICENCA.copyright}`);
+  console.log(`  ${LICENCA.nome} — somente uso não comercial (arquivo LICENSE).`);
+  console.log(`  ${LICENCA.uso_gratuito}`);
+  console.log(`  ${LICENCA.uso_comercial}`);
+  console.log(`  Licença comercial: ${LICENCA.licenca_comercial}`);
+  if (SIM) { console.log('  Aceita os termos da licença? S (automático)'); return true; }
+  return /^(s|sim|y|yes)$/i.test(await perguntar('  Aceita os termos da licença? [s/N] '));
+}
+
 async function instalar() {
   console.log('PJe-Calc MCP — instalação');
   console.log(`Node.js: ${process.version} (${NODE})`);
+  if (!await aceitarLicenca()) {
+    aviso('Instalação cancelada: é preciso aceitar a licença para instalar.');
+    return;
+  }
   const r = await passoPjeCalc();
   const feitos = await passoAgentes();
   const testado = await passoTeste();

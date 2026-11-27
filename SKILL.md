@@ -10,7 +10,7 @@ description: >-
   execução, cálculo externo, precatório e RPV), ou para operar o aplicativo. Ferramentas do servidor
   MCP "pjecalc": processo_*, titulo_*, documento_*, holerites_*, cartoes_*, extrato_*, trct_*,
   calculo_*, catalogo_*, tabelas_*, pjecalc_*, rest_*, db_*, config_*.
-license: AGPL-3.0
+license: PolyForm-Noncommercial-1.0.0
 metadata:
   version: 2.16.0-mcp.19
 ---
