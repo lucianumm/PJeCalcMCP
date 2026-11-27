@@ -350,6 +350,7 @@ Para registrar o servidor em um agente, use `node <pasta>\server\server.mjs` e o
 |---|---|
 | `PJECALC_HOME` | Fixa a pasta do PJe-Calc, que contém `bin/` e `tomcat/`; quando ausente, há localização automática. |
 | `PJECALC_MCP_SAIDA` | Escolhe a pasta dos `.PJC`, relatórios e registros gerados. |
+| `PJECALC_MCP_SEM_AVISO_VERSAO` | Com `1`, desliga a consulta à última versão publicada no repositório oficial. Sem ela, o servidor e o instalador avisam quando há versão mais nova (a consulta só lê a página pública de versões do GitHub e não envia dados). |
 
 Os testes de integração em [`scripts/test-ponta-a-ponta.mjs`](scripts/test-ponta-a-ponta.mjs)
 exigem o **PJe-Calc 2.16** e operam uma instalação real: criam, liquidam e excluem cálculos de teste
