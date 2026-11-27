@@ -50,7 +50,7 @@ import { verificarVersao } from './lib/versao-mcp.mjs';
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const referencesDir = path.resolve(__dirname, '..', 'references');
 const exemplosDir = path.resolve(__dirname, '..', 'exemplos');
-const PACKAGE_VERSION = '2.16.0-mcp.19';
+const PACKAGE_VERSION = '2.16.0-mcp.20';
 const TRTS = Array.from({ length: 24 }, (_, i) => `TRT${i + 1}`);
 
 // ---------------------------------------------------------------------------
