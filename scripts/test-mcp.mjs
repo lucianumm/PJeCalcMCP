@@ -1149,6 +1149,22 @@ try {
       'sentença sem data continua falha sem trânsito, com acórdão sem data ou com a cadeia em outro processo');
   }
 
+  console.log('23) aviso de versão desatualizada');
+  {
+    const v = await import('../server/lib/versao-mcp.mjs');
+    verificar(v.compararVersoes('2.16.0-mcp.19', 'v2.16.0-mcp.20') < 0 && v.compararVersoes('2.16.0-mcp.19', 'v2.16.0-mcp.9') > 0
+      && v.compararVersoes('2.16.0-mcp.19', 'v2.16.0-mcp.19') === 0 && v.compararVersoes('2.16.0-mcp.19', 'v2.17.0') < 0
+      && v.compararVersoes('2.16.0-mcp.19', 'nightly') === null, 'versões comparadas pelo número do MCP, não como texto');
+    const falso = (r) => async () => ({ ok: true, json: async () => r });
+    const antiga = await v.verificarVersao('2.16.0-mcp.19', { fetchFn: falso({ tag_name: 'v2.16.0-mcp.20', html_url: 'https://github.com/lucianumm/PJeCalcMCP/releases/tag/v2.16.0-mcp.20' }) });
+    const atual = await v.verificarVersao('2.16.0-mcp.19', { fetchFn: falso({ tag_name: 'v2.16.0-mcp.19' }) });
+    const previa = await v.verificarVersao('2.16.0-mcp.19', { fetchFn: falso({ tag_name: 'v2.16.0-mcp.21', prerelease: true }) });
+    const semRede = await v.verificarVersao('2.16.0-mcp.19', { fetchFn: async () => { throw new Error('offline'); } });
+    verificar(antiga.desatualizada && /2\.16\.0-mcp\.20/.test(antiga.mensagem) && /releases\/tag/.test(antiga.mensagem) && /licença comercial/.test(antiga.mensagem)
+      && !atual.desatualizada && previa === null && semRede === null,
+      'versão antiga avisa com o link e a licença; atual, prévia e sem internet não avisam');
+  }
+
   console.log('\nTODOS OS TESTES OFFLINE PASSARAM');
 } catch (e) {
   console.error(`\n${e.message}`);

@@ -21,6 +21,8 @@ const modo = process.argv[2] || 'instalar';
 const SIM = process.argv.includes('--sim');
 const loc = await import(pathToFileURL(path.join(RAIZ, 'server', 'lib', 'localizar.mjs')).href);
 const { LICENCA } = await import(pathToFileURL(path.join(RAIZ, 'server', 'lib', 'licenca.mjs')).href);
+const { verificarVersao } = await import(pathToFileURL(path.join(RAIZ, 'server', 'lib', 'versao-mcp.mjs')).href);
+const VERSAO = JSON.parse(fs.readFileSync(path.join(RAIZ, 'server', 'package.json'), 'utf8')).version;
 
 const rl = SIM ? null : readline.createInterface({ input: process.stdin, output: process.stdout });
 const perguntar = (q) => (SIM ? Promise.resolve('') : new Promise((r) => rl.question(q, (x) => r(x.trim()))));
@@ -211,9 +213,19 @@ async function aceitarLicenca() {
   return /^(s|sim|y|yes)$/i.test(await perguntar('  Aceita os termos da licença? [s/N] '));
 }
 
+// avisa quando há versão mais nova no repositório oficial (sem internet, segue em silêncio)
+async function passoVersao() {
+  titulo('Versão do PJe-Calc MCP');
+  const s = await verificarVersao(VERSAO);
+  if (!s) ok(`${VERSAO} (não foi possível consultar a última versão)`);
+  else if (s.desatualizada) aviso(s.mensagem);
+  else ok(s.mensagem);
+}
+
 async function instalar() {
   console.log('PJe-Calc MCP — instalação');
   console.log(`Node.js: ${process.version} (${NODE})`);
+  await passoVersao();
   if (!await aceitarLicenca()) {
     aviso('Instalação cancelada: é preciso aceitar a licença para instalar.');
     return;
@@ -231,6 +243,7 @@ async function instalar() {
 
 async function conferir() {
   console.log('PJe-Calc MCP — conferência');
+  await passoVersao();
   titulo('Node.js');
   const maior = Number(process.versions.node.split('.')[0]);
   if (maior >= 20) ok(`${process.version} (${NODE})`); else aviso(`${process.version} é antigo: o MCP precisa do Node 20 ou mais novo.`);

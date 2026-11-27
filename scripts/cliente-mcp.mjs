@@ -13,7 +13,7 @@ const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
 export async function conectar() {
   const serverPath = path.resolve(__dirname, '..', 'server', 'server.mjs');
-  const child = spawn(process.execPath, [serverPath], { stdio: ['pipe', 'pipe', 'pipe'], env: { ...process.env } });
+  const child = spawn(process.execPath, [serverPath], { stdio: ['pipe', 'pipe', 'pipe'], env: { ...process.env, PJECALC_MCP_SEM_AVISO_VERSAO: '1' } });
   let buf = '';
   let prox = 1;
   const pend = new Map();

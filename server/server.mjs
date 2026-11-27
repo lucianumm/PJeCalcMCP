@@ -45,6 +45,7 @@ import * as conv from './lib/conversores.mjs';
 import { OperadorPjeCalc } from './lib/operacoes.mjs';
 import { numeroCnj, cpfValido, cnpjValido, COLUNAS_APURACAO } from './lib/gerador.mjs';
 import { LICENCA, avisoLicenca } from './lib/licenca.mjs';
+import { verificarVersao } from './lib/versao-mcp.mjs';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const referencesDir = path.resolve(__dirname, '..', 'references');
@@ -89,12 +90,28 @@ function texto(text) {
 // a localização automática do PJe-Calc roda uma vez no início (pode varrer o disco); as ferramentas esperam
 const localizacaoInicial = loc.localizar().catch((e) => ({ valida: false, mensagem: e.message }));
 
+// aviso de versão desatualizada: consulta o repositório oficial uma vez no início, sem bloquear nada;
+// o aviso vai no log, numa notificação ao cliente e uma vez na primeira resposta de ferramenta
+let situacaoVersao = null;
+let avisoVersaoPendente = false;
+const verificacaoVersao = verificarVersao(PACKAGE_VERSION).then((s) => {
+  situacaoVersao = s;
+  avisoVersaoPendente = Boolean(s && s.desatualizada);
+  return s;
+});
+
+function comAvisoVersao(resposta) {
+  if (!avisoVersaoPendente) return resposta;
+  avisoVersaoPendente = false;
+  return { ...resposta, content: [...resposta.content, { type: 'text', text: `AVISO DE VERSÃO (repasse ao usuário): ${situacaoVersao.mensagem}` }] };
+}
+
 async function handler(fn) {
   try {
     await localizacaoInicial;
     const result = await fn();
-    if (typeof result === 'string') return texto(result);
-    return { content: [{ type: 'text', text: JSON.stringify(result, null, 2) }] };
+    if (typeof result === 'string') return comAvisoVersao(texto(result));
+    return comAvisoVersao({ content: [{ type: 'text', text: JSON.stringify(result, null, 2) }] });
   } catch (e) {
     const extra = [];
     if (e.mensagens && e.mensagens.length) extra.push(`Mensagens do PJe-Calc: ${e.mensagens.join(' | ')}`);
@@ -835,10 +852,11 @@ server.registerTool('modelos_atualizar', {
 
 server.registerTool('pjecalc_info', {
   title: 'Informações do PJe-Calc',
-  description: 'Identidade completa da instalação: versão/build do pjecalc.jar, módulos (base/negocio/integracao), stack tecnológico, portas do Tomcat, DataSource H2, parâmetros de JVM dos .bat, token de serviços e URLs dos 24 TRTs para sincronização de tabelas.',
+  description: 'Identidade completa da instalação: versão/build do pjecalc.jar, módulos (base/negocio/integracao), stack tecnológico, portas do Tomcat, DataSource H2, parâmetros de JVM dos .bat, token de serviços, URLs dos 24 TRTs para sincronização de tabelas e, do próprio MCP, a versão (com aviso se houver versão mais nova no repositório oficial) e a licença.',
   inputSchema: z.object({}),
-}, () => handler(() => {
+}, () => handler(async () => {
   const jar = env.readJarVersion();
+  const versaoMcp = await Promise.race([verificacaoVersao, new Promise((r) => setTimeout(() => r(null), 6000))]);
   return {
     produto: 'PJe-Calc Cidadão',
     versao: '2.16.0',
@@ -860,7 +878,11 @@ server.registerTool('pjecalc_info', {
     launcher: env.readLauncherParams(),
     tribunais: env.readTribunalUrls(),
     diretorio: env.home(),
-    mcp: { versao: PACKAGE_VERSION, licenca: LICENCA },
+    mcp: {
+      versao: PACKAGE_VERSION,
+      atualizacao: versaoMcp || 'não verificada (sem internet ou PJECALC_MCP_SEM_AVISO_VERSAO=1)',
+      licenca: LICENCA,
+    },
   };
 }));
 
@@ -1277,6 +1299,11 @@ async function main() {
   const l = await localizacaoInicial;
   console.error(`[pjecalc-mcp] PJe-Calc MCP ${PACKAGE_VERSION} ativo (stdio). ${l.valida ? `PJe-Calc: ${l.pasta} (${l.origem})` : `PJe-Calc não localizado: ${l.mensagem}`}`);
   console.error(`[pjecalc-mcp] ${avisoLicenca()}`);
+  verificacaoVersao.then((s) => {
+    if (!s || !s.desatualizada) return;
+    console.error(`[pjecalc-mcp] ${s.mensagem}`);
+    server.sendLoggingMessage({ level: 'warning', logger: 'pjecalc-mcp', data: s.mensagem }).catch(() => {});
+  });
   process.on('SIGINT', async () => { await server.close(); process.exit(0); });
 }
 
