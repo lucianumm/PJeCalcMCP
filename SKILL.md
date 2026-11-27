@@ -12,7 +12,7 @@ description: >-
   calculo_*, catalogo_*, tabelas_*, pjecalc_*, rest_*, db_*, config_*.
 license: PolyForm-Noncommercial-1.0.0
 metadata:
-  version: 2.16.0-mcp.19
+  version: 2.16.0-mcp.20
 ---
 
 # PJe-Calc MCP (skill)

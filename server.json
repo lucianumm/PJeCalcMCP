@@ -7,12 +7,12 @@
     "url": "https://github.com/lucianumm/PJeCalcMCP",
     "source": "github"
   },
-  "version": "2.16.0-mcp.19",
+  "version": "2.16.0-mcp.20",
   "packages": [
     {
       "registryType": "mcpb",
-      "identifier": "https://github.com/lucianumm/PJeCalcMCP/releases/download/v2.16.0-mcp.19/pjecalc-mcp-2.16.0-mcp.19.mcpb",
-      "fileSha256": "40e827c1641be85e78a18381cad8906bb2a06cf782de4007b5a577c5abeabb43",
+      "identifier": "https://github.com/lucianumm/PJeCalcMCP/releases/download/v2.16.0-mcp.20/pjecalc-mcp-2.16.0-mcp.20.mcpb",
+      "fileSha256": "de4f1573e15bc1ed93027b1f86656367c7691f14e2d733c79ca7f22f00c63721",
       "transport": {
         "type": "stdio"
       }
