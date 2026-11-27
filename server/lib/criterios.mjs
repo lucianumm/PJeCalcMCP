@@ -1,4 +1,7 @@
 // pjecalc-mcp-skill · lib/criterios.mjs
+// SPDX-License-Identifier: PolyForm-Noncommercial-1.0.0
+// Required Notice: Copyright (C) 2026 Lucianum (https://github.com/lucianumm)
+// Uso comercial exige licença do titular: veja LICENSE e LICENCA-COMERCIAL.md.
 // Critérios que o PJe-Calc diz ter aplicado (relatório JUSTIFICATIVA)
 // conferidos com os parâmetros do cálculo: índice e regra de acumulação, combinações de índices, base dos juros,
 // juros na fase pré-judicial, prescrição quinquenal, aviso prévio pela Lei 12.506 e tabela do imposto de renda.

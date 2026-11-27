@@ -1,4 +1,7 @@
 // pjecalc-mcp-skill · lib/modelos.mjs
+// SPDX-License-Identifier: PolyForm-Noncommercial-1.0.0
+// Required Notice: Copyright (C) 2026 Lucianum (https://github.com/lucianumm)
+// Uso comercial exige licença do titular: veja LICENSE e LICENCA-COMERCIAL.md.
 // Modelos usados pelo gerador de .PJC, todos extraídos do PRÓPRIO PJe-Calc:
 //
 //   modelos/calculo-base.json      árvore de um cálculo novo criado pela interface (valores padrão

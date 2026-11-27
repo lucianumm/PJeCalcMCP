@@ -1,4 +1,7 @@
 // pjecalc-mcp-skill · lib/processo.mjs
+// SPDX-License-Identifier: PolyForm-Noncommercial-1.0.0
+// Required Notice: Copyright (C) 2026 Lucianum (https://github.com/lucianumm)
+// Uso comercial exige licença do titular: veja LICENSE e LICENCA-COMERCIAL.md.
 // Mapa do processo: o processo principal, a fase em que está, o tipo de trabalho que essa fase exige e
 // todos os processos ligados a ele (conexos, ação anterior arquivada, coletiva, acordo, recuperação
 // judicial...), com o efeito de cada um no cálculo. Também confere devedores, pagamentos feitos na

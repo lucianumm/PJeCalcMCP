@@ -1,4 +1,7 @@
 // pjecalc-mcp-skill · lib/decimal.mjs
+// SPDX-License-Identifier: PolyForm-Noncommercial-1.0.0
+// Required Notice: Copyright (C) 2026 Lucianum (https://github.com/lucianumm)
+// Uso comercial exige licença do titular: veja LICENSE e LICENCA-COMERCIAL.md.
 // Aritmética decimal exata (BigInt) para refazer as contas do PJe-Calc: o aplicativo usa BigDecimal com
 // precisão de 38 dígitos e arredonda valores monetários para 2 casas com HALF_EVEN.
 // Em ponto flutuante, um empate (x,xx5) pode cair do lado errado; aqui não.

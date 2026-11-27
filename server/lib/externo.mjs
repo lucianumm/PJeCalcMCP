@@ -1,4 +1,7 @@
 // pjecalc-mcp-skill · lib/externo.mjs
+// SPDX-License-Identifier: PolyForm-Noncommercial-1.0.0
+// Required Notice: Copyright (C) 2026 Lucianum (https://github.com/lucianumm)
+// Uso comercial exige licença do titular: veja LICENSE e LICENCA-COMERCIAL.md.
 // Cálculo Externo: atualização de uma conta homologada feita FORA do PJe-Calc (perito, contadoria, acordo).
 // Os valores consolidados na data-base entram nas telas "Novo Cálculo Externo" e "Parcelas Atualizáveis";
 // ao salvar, o próprio PJe-Calc transforma as parcelas num cálculo sintético (verbas, FGTS, INSS, custas) e a

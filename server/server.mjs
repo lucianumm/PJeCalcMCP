@@ -1,4 +1,7 @@
 // pjecalc-mcp-skill · server/server.mjs
+// SPDX-License-Identifier: PolyForm-Noncommercial-1.0.0
+// Required Notice: Copyright (C) 2026 Lucianum (https://github.com/lucianumm)
+// Uso comercial exige licença do titular: veja LICENSE e LICENCA-COMERCIAL.md.
 // Servidor MCP (Model Context Protocol) do PJe-Calc Cidadão 2.16.0.
 //
 // Objetivo principal: permitir que agentes de IA montem o cálculo trabalhista INTEIRO no PJe-Calc
@@ -41,6 +44,7 @@ import * as plano from './lib/plano.mjs';
 import * as conv from './lib/conversores.mjs';
 import { OperadorPjeCalc } from './lib/operacoes.mjs';
 import { numeroCnj, cpfValido, cnpjValido, COLUNAS_APURACAO } from './lib/gerador.mjs';
+import { LICENCA, avisoLicenca } from './lib/licenca.mjs';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const referencesDir = path.resolve(__dirname, '..', 'references');
@@ -70,6 +74,7 @@ const server = new McpServer({
     'Conta de referência: calculo_comparar_referencia aceita outro cálculo, o relatório em PDF/HTML/texto ou a conta transcrita (referencia_manual).',
     'Não use rest_tabelas_* para atualizar índices: são o lado servidor do PJe-Calc local.',
     'Nunca escreva cálculos direto no banco H2: isso dessincroniza as sequências do Hibernate e impede o PJe-Calc de criar cálculos.',
+    `Licença: ${avisoLicenca()}`,
   ].join(' '),
 });
 
@@ -855,6 +860,7 @@ server.registerTool('pjecalc_info', {
     launcher: env.readLauncherParams(),
     tribunais: env.readTribunalUrls(),
     diretorio: env.home(),
+    mcp: { versao: PACKAGE_VERSION, licenca: LICENCA },
   };
 }));
 
@@ -1270,6 +1276,7 @@ async function main() {
   await server.connect(transport);
   const l = await localizacaoInicial;
   console.error(`[pjecalc-mcp] PJe-Calc MCP ${PACKAGE_VERSION} ativo (stdio). ${l.valida ? `PJe-Calc: ${l.pasta} (${l.origem})` : `PJe-Calc não localizado: ${l.mensagem}`}`);
+  console.error(`[pjecalc-mcp] ${avisoLicenca()}`);
   process.on('SIGINT', async () => { await server.close(); process.exit(0); });
 }
 

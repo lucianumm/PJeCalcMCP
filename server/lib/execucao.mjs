@@ -1,4 +1,7 @@
 // pjecalc-mcp-skill · lib/execucao.mjs
+// SPDX-License-Identifier: PolyForm-Noncommercial-1.0.0
+// Required Notice: Copyright (C) 2026 Lucianum (https://github.com/lucianumm)
+// Uso comercial exige licença do titular: veja LICENSE e LICENCA-COMERCIAL.md.
 // Fase de execução: pagamentos (depósitos, alvarás, bloqueios convertidos) e eventos da atualização (honorários,
 // multas, pensão alimentícia e custas da execução) gravados no .PJC de um cálculo LIQUIDADO; o PJe-Calc faz o
 // rateio e a imputação na "Liquidar Atualização". As regras das telas de pagamento do aplicativo são conferidas

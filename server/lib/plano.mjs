@@ -1,4 +1,7 @@
 // pjecalc-mcp-skill · lib/plano.mjs
+// SPDX-License-Identifier: PolyForm-Noncommercial-1.0.0
+// Required Notice: Copyright (C) 2026 Lucianum (https://github.com/lucianumm)
+// Uso comercial exige licença do titular: veja LICENSE e LICENCA-COMERCIAL.md.
 // Plano de interpretação: o que o agente entendeu do processo, apresentado ao usuário ANTES do cálculo.
 // O usuário aprova (ou corrige); a aprovação fica em contrato.aprovacao com o hash do contrato aprovado
 // e cai sozinha se o contrato ou o cenário mudarem depois.

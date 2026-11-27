@@ -1,4 +1,7 @@
 // pjecalc-mcp-skill · scripts/test-ponta-a-ponta.mjs
+// SPDX-License-Identifier: PolyForm-Noncommercial-1.0.0
+// Required Notice: Copyright (C) 2026 Lucianum (https://github.com/lucianumm)
+// Uso comercial exige licença do titular: veja LICENSE e LICENCA-COMERCIAL.md.
 // Teste COMPLETO com o PJe-Calc 2.16.0: para cada exemplo, gera o cálculo pelo MCP (calculo_criar:
 // gerar .PJC, importar, passos pós-importação, regerar, pendências, exportar o "-PRONTO.PJC"),
 // liquida em 30/06/2016 e compara os totais com o gabarito do MESMO cálculo montado à mão na interface.

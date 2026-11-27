@@ -1,4 +1,7 @@
 // pjecalc-mcp-skill · lib/precedentes.mjs
+// SPDX-License-Identifier: PolyForm-Noncommercial-1.0.0
+// Required Notice: Copyright (C) 2026 Lucianum (https://github.com/lucianumm)
+// Uso comercial exige licença do titular: veja LICENSE e LICENCA-COMERCIAL.md.
 // Catálogo de precedentes com efeito no cálculo (vigência, modulação e como parametrizar no PJe-Calc) e
 // as conferências que dependem deles. O catálogo é ponto de partida: cada item precisa ser conferido na
 // fonte oficial e revisto quando surgir tese nova. Fora do catálogo, ou na dúvida sobre vigência e

@@ -1,4 +1,7 @@
 // pjecalc-mcp-skill · lib/conversores.mjs
+// SPDX-License-Identifier: PolyForm-Noncommercial-1.0.0
+// Required Notice: Copyright (C) 2026 Lucianum (https://github.com/lucianumm)
+// Uso comercial exige licença do titular: veja LICENSE e LICENCA-COMERCIAL.md.
 // Ferramentas de leitura e conversão (Parte B). Organizam e conferem o que o agente leu; NÃO substituem a
 // leitura de cada página.
 //

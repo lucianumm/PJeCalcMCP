@@ -1,4 +1,7 @@
 // pjecalc-mcp-skill · lib/auditor.mjs
+// SPDX-License-Identifier: PolyForm-Noncommercial-1.0.0
+// Required Notice: Copyright (C) 2026 Lucianum (https://github.com/lucianumm)
+// Uso comercial exige licença do titular: veja LICENSE e LICENCA-COMERCIAL.md.
 // Ponte com o AuditorProcessual (https://github.com/lucianumm/AuditorProcessual): lê a pasta de saída da
 // ingestão dele (manifest.json, pages.jsonl, recovery_findings.json) e, quando houver, o livro-razão da jornada e
 // da folha (labor_ledger), os eventos do contrato (labor_events) e a revisão com os fatos (página e trecho), e
